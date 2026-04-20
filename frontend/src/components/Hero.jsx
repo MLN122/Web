@@ -56,8 +56,8 @@ export default function Hero() {
         autoSplit: true,
         onSplit(self) {
           // Colour the first word ("Độc") coral and second ("Quyền") pink via inline style
-          if (self.words[0]) self.words[0].style.cssText += ';color:#FF6B35;'
-          if (self.words[1]) self.words[1].style.cssText += ';color:#FF1493;'
+          if (self.words[0]) self.words[0].style.cssText += ';color:#C8853A;'
+          if (self.words[1]) self.words[1].style.cssText += ';color:#7A4521;'
           gsap.from(self.lines, {
             yPercent: 108,
             duration: 0.85,
@@ -93,7 +93,7 @@ export default function Hero() {
       <img
         ref={bgRef}
         className="hero__video-bg"
-        src="/CMTM.jpg"
+        src="/ubnd.png"
         alt=""
         aria-hidden="true"
       />

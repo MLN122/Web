@@ -152,6 +152,22 @@ export default function HinhThuc() {
           </p>
         </header>
 
+        {/* Minh họạ ảnh AI */}
+        <div className="section-illus" data-reveal>
+          <div className="section-illus__wrap">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&q=80&fit=crop"
+              alt="Hội nghị thương mại — minh họạ các hình thức tổ chức độc quyền"
+              className="section-illus__img"
+              loading="lazy"
+            />
+            <span className="section-illus__ai-badge">🤖 Minh họạ · Tạo bởi AI</span>
+          </div>
+          <p className="section-illus__caption">
+            Hình ảnh minh họạ: Phòng họi nghị của một tín-tơ-tư (Trust) — hình thức liên kết tư bản trọn vẹn nhất trong thế kỷ XX.
+          </p>
+        </div>
+
         {/* Progression bar */}
         <div className="org-progression" data-reveal data-delay="100">
           {FORMS.map((f, i) => (

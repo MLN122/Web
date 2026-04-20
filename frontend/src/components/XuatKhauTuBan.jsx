@@ -99,6 +99,22 @@ export default function XuatKhauTuBan() {
           </p>
         </header>
 
+        {/* Minh họạ ảnh AI */}
+        <div className="section-illus" data-reveal>
+          <div className="section-illus__wrap">
+            <img
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=80&fit=crop"
+              alt="Mạng lưới toàn cầu — minh họạ biểu hiện mới của độc quyền thế kỷ XXI"
+              className="section-illus__img"
+              loading="lazy"
+            />
+            <span className="section-illus__ai-badge">🤖 Minh họạ · Tạo bởi AI</span>
+          </div>
+          <p className="section-illus__caption">
+            Hình ảnh minh họạ: Mạng lưới độc quyền xuyên quốc gia trong kỷ nguyên số — biểu tượng của chủ nghĩa đế quốc hiện đại.
+          </p>
+        </div>
+
         {/* 4 new manifestations */}
         <h3 className="sub-heading" data-reveal style={{ marginBottom: '1.5rem' }}>
           5 Những biểu hiện mới của Độc quyền ngày nay

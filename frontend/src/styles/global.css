@@ -177,13 +177,13 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
   white-space: nowrap;
 }
 .btn--primary {
-  background: linear-gradient(135deg, #FF6B35, #E91E8C);
+  background: linear-gradient(135deg, #C8853A, #7A4521);
   color: #fff;
-  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+  box-shadow: 0 4px 20px rgba(139, 94, 60, 0.40);
 }
 .btn--primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(255, 107, 53, 0.55);
+  box-shadow: 0 8px 32px rgba(139, 94, 60, 0.55);
 }
 .btn--outline {
   background: transparent;
@@ -433,9 +433,9 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 107, 53, 0.15);
-  border: 1px solid rgba(255, 107, 53, 0.45);
-  color: #FF9A6C;
+  background: rgba(139, 94, 60, 0.18);
+  border: 1px solid rgba(139, 94, 60, 0.45);
+  color: #C8853A;
   padding: 0.4rem 1.1rem;
   border-radius: var(--r-xl);
   font-size: 0.8rem;
@@ -493,7 +493,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
   display: block;
   font-size: 2.2rem;
   font-weight: 900;
-  background: linear-gradient(135deg, #FFD700, #FF6B35);
+  background: linear-gradient(135deg, #E8C87A, #C8853A);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1398,6 +1398,52 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
 @media (max-width: 640px) {
   .img-banner { min-height: 260px; }
   .img-banner__content { padding: 3rem 1.2rem; }
+}
+
+/* ── 13b. SECTION ILLUSTRATIONS ─────────────────────── */
+.section-illus {
+  margin: 0 0 2.5rem;
+}
+.section-illus__wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 5;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--sh-md);
+}
+.section-illus__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.15) brightness(1.08) sepia(0.12);
+  transition: transform 0.7s ease;
+}
+.section-illus__wrap:hover .section-illus__img {
+  transform: scale(1.04);
+}
+.section-illus__ai-badge {
+  position: absolute;
+  bottom: 0.7rem;
+  right: 0.8rem;
+  background: rgba(255, 252, 245, 0.88);
+  color: #7A4521;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.28rem 0.75rem;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(184, 118, 42, 0.35);
+  pointer-events: none;
+}
+.section-illus__caption {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.55rem;
+  font-style: italic;
 }
 
 /* ── 14. MEMORY GAME ────────────────────────────────── */

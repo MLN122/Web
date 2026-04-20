@@ -90,7 +90,23 @@ export default function DacDiem() {
           </p>
         </header>
 
-        {/* Positives */}
+        {/* Minh họạ ảnh AI */}
+        <div className="section-illus" data-reveal>
+          <div className="section-illus__wrap">
+            <img
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&q=80&fit=crop"
+              alt="Khu tài chính đô thị — minh họạ tác động của độc quyền kinh tế"
+              className="section-illus__img"
+              loading="lazy"
+            />
+            <span className="section-illus__ai-badge">🤖 Minh họạ · Tạo bởi AI</span>
+          </div>
+          <p className="section-illus__caption">
+            Hình ảnh minh họạ: Trung tâm tài chính độc quyền — biểu tượng quyền lực kinh tế tập trung trong chủ nghĩa tư bản hiện đại.
+          </p>
+        </div>
+
+        {/* Positives */}}
         <h3 className="sub-heading" data-reveal style={{ color: '#06D6A0', marginBottom: '1.25rem' }}>
           ✅ Tác động Tích cực
         </h3>

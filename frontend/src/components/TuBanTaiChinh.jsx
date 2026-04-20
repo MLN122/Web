@@ -92,7 +92,23 @@ export default function TuBanTaiChinh() {
           </p>
         </header>
 
-        {/* Bản chất banner */}
+        {/* Minh họạ ảnh AI */}
+        <div className="section-illus" data-reveal>
+          <div className="section-illus__wrap">
+            <img
+              src="https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=1400&q=80&fit=crop"
+              alt="Trụ sở ngân hàng nhà nước — minh họạ độc quyền nhà nước trong chủ nghĩa tư bản"
+              className="section-illus__img"
+              loading="lazy"
+            />
+            <span className="section-illus__ai-badge">🤖 Minh họạ · Tạo bởi AI</span>
+          </div>
+          <p className="section-illus__caption">
+            Hình ảnh minh họạ: Ngân hàng trung ương và các tập đoàn độc quyền nhà nước — nền tảng của sự điều tiết kinh tế tư sản.
+          </p>
+        </div>
+
+        {/* Bản chất banner */}}
         <div className="quote-banner" data-reveal data-delay="100">
           <div className="quote-icon">🏛️</div>
           <div className="quote-body">
