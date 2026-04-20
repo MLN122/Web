@@ -10,16 +10,17 @@ const STATS = [
 ]
 
 const FLOAT_CARDS = [
-  { cls: 'float-card--1', icon: '🏭', label: 'Tập trung sản xuất',   sub: 'Đặc điểm số 1' },
-  { cls: 'float-card--2', icon: '🏦', label: 'Tư bản tài chính',     sub: 'Đặc điểm số 2' },
-  { cls: 'float-card--3', icon: '✈️', label: 'Xuất khẩu tư bản',    sub: 'Đặc điểm số 3' },
+  { cls: 'float-card--1', icon: '🏭', label: 'Tập trung sản xuất',   sub: 'Đặc điểm số 1', iconBg: 'rgba(255,107,53,0.35)' },
+  { cls: 'float-card--2', icon: '🏦', label: 'Tư bản tài chính',     sub: 'Đặc điểm số 2', iconBg: 'rgba(0,212,255,0.3)' },
+  { cls: 'float-card--3', icon: '✈️', label: 'Xuất khẩu tư bản',    sub: 'Đặc điểm số 3', iconBg: 'rgba(255,215,0,0.3)' },
 ]
 
 const PARTICLES = [
-  { style: { width: 80,  height: 80,  top: '15%', left: '8%',  background: 'rgba(195,177,225,0.3)',  animationDelay: '0s' } },
-  { style: { width: 120, height: 120, top: '60%', left: '3%',  background: 'rgba(255,179,198,0.2)',  animationDelay: '2s' } },
-  { style: { width: 60,  height: 60,  top: '80%', left: '15%', background: 'rgba(181,234,215,0.25)', animationDelay: '1s' } },
-  { style: { width: 90,  height: 90,  top: '30%', right: '5%', background: 'rgba(189,224,254,0.2)',  animationDelay: '3s' } },
+  { style: { width: 80,  height: 80,  top: '15%', left: '8%',  background: 'rgba(255,107,53,0.25)',  animationDelay: '0s' } },
+  { style: { width: 120, height: 120, top: '60%', left: '3%',  background: 'rgba(255,215,0,0.18)',   animationDelay: '2s' } },
+  { style: { width: 60,  height: 60,  top: '80%', left: '15%', background: 'rgba(0,212,255,0.2)',    animationDelay: '1s' } },
+  { style: { width: 90,  height: 90,  top: '30%', right: '5%', background: 'rgba(255,20,147,0.15)',  animationDelay: '3s' } },
+  { style: { width: 50,  height: 50,  top: '50%', left: '45%', background: 'rgba(0,255,136,0.15)',   animationDelay: '1.5s' } },
 ]
 
 function StatItem({ target, label }) {
@@ -58,6 +59,13 @@ export default function Hero() {
       <div ref={bgRef} className="hero__parallax-bg" />
       <div className="hero__overlay" />
 
+      {/* Aurora blobs */}
+      <div className="hero__aurora" aria-hidden="true">
+        <div className="aurora-blob aurora-blob--1" />
+        <div className="aurora-blob aurora-blob--2" />
+        <div className="aurora-blob aurora-blob--3" />
+      </div>
+
       {/* Floating particles */}
       <div className="hero__particles" aria-hidden="true">
         {PARTICLES.map((p, i) => (
@@ -94,7 +102,7 @@ export default function Hero() {
             <a href="#gioi-thieu" className="btn btn--primary" onClick={(e) => go(e, '#gioi-thieu')}>
               Khám phá nội dung ↓
             </a>
-            <a href="#minigame" className="btn btn--outline" style={{ color: 'rgba(255,255,255,0.85)', borderColor: 'rgba(255,255,255,0.4)' }} onClick={(e) => go(e, '#minigame')}>
+            <a href="#minigame" className="btn btn--outline hero__btn-ghost" onClick={(e) => go(e, '#minigame')}>
               🎮 Chơi Mini Game
             </a>
           </div>
@@ -123,7 +131,7 @@ export default function Hero() {
           {/* Floating info cards */}
           {FLOAT_CARDS.map((fc) => (
             <div key={fc.label} className={`hero__float-card ${fc.cls}`}>
-              <span>{fc.icon}</span>
+              <div className="float-icon" style={{ background: fc.iconBg }}>{fc.icon}</div>
               <div>
                 <div style={{ fontWeight: 700, fontSize: '0.8rem' }}>{fc.label}</div>
                 <div style={{ fontSize: '0.68rem', opacity: 0.7 }}>{fc.sub}</div>
