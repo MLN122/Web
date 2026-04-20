@@ -76,33 +76,7 @@ body {
   background: var(--bg-base);
   color: var(--text-body);
   line-height: 1.7;
-  overflow: hidden; /* GSAP Observer handles all scroll */
-  height: 100vh;
-}
-
-/* ── GSAP FULLSCREEN SCROLL ─────────────────────────── */
-.section-slide {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100vh;
-  visibility: hidden;
-}
-.gsap-outer {
-  width: 100%; height: 100%;
-  overflow: hidden;
-}
-.gsap-inner {
-  width: 100%; height: 100%;
-  overflow: hidden;
-}
-.section-bg {
-  width: 100%; height: 100%;
-  overflow: hidden;
-}
-.section-bg .section,
-.section-bg footer {
-  width: 100%;
-  min-height: 100vh;
+  overflow-x: hidden;
 }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
