@@ -61,7 +61,7 @@ export default function GioiThieu() {
               className="section-illus__img"
               loading="lazy"
             />
-            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
+            <span className="section-illus__ai-badge">🤖 Ảnh do AI tạo ra</span>
           </div>
           <p className="section-illus__caption">
             Hình ảnh minh họa: Sàn giao dịch chứng khoán — nơi tập trung tư bản và khởi nguồn của các tổ chức độc quyền tài chính thế giới.

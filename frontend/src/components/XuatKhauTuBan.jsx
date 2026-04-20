@@ -101,18 +101,17 @@ export default function XuatKhauTuBan() {
 
         {/* Minh họạ ảnh AI */}
         <div className="section-illus" data-reveal>
-          <div className="section-illus__wrap">
+          <div className="section-illus__wrap" style={{ aspectRatio: 'auto', height: 'auto' }}>
             <img
               src="/p5.jpg"
-              alt="Biểu hiện mới của độc quyền — minh họa AI MLN122"
-              className="section-illus__img"
+              alt="Biểu hiện mới của độc quyền — minh họa do AI tạo ra"
+              style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'unset', filter: 'none', transform: 'none' }}
               loading="lazy"
-              style={{ objectFit: 'cover', objectPosition: 'center' }}
             />
-            <span className="section-illus__ai-badge">🤖 Ảnh do AI tạo ra · AI MLN122</span>
+            <span className="section-illus__ai-badge">🤖 Ảnh do AI tạo ra</span>
           </div>
           <p className="section-illus__caption">
-            Hình ảnh minh họa: Biểu hiện mới của độc quyền xuyên quốc gia trong kỷ nguyên số — được tạo bởi AI MLN122.
+            Hình ảnh minh họa: Những biểu hiện mới của độc quyền xuyên quốc gia trong kỷ nguyên số — do AI tạo ra.
           </p>
         </div>
 

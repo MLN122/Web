@@ -8,7 +8,7 @@ gsap.registerPlugin(SplitText)
 
 const STATS = [
   { target: 5,  label: 'Đặc điểm CNTB Độc Quyền' },
-  { target: 4,  label: 'Hình thức tổ chức' },
+  { target: 5,  label: 'Hình thức tổ chức' },
   { target: 2,  label: 'Hình thức xuất khẩu' },
   
 ]
