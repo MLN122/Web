@@ -89,15 +89,12 @@ export default function Hero() {
 
   return (
     <section id="hero" className="hero">
-      {/* Video background (VN.mp4 in /public) */}
-      <video
+      {/* Background image */}
+      <img
         ref={bgRef}
         className="hero__video-bg"
-        src="/VN.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
+        src="/CMTM.jpg"
+        alt=""
         aria-hidden="true"
       />
       <div className="hero__overlay" />

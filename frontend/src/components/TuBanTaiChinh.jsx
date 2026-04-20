@@ -27,10 +27,10 @@ const CAUSES = [
 ]
 
 const REVOLVING_DOOR = [
-  { icon: '🏭', text: 'Đại diện tổ chức ĐQ → Cương vị quan trọng trong chính phủ' },
-  { icon: '🔄', text: 'Quan chức rời chính trường → HĐQT tập đoàn lớn ("cánh cửa xoay")' },
-  { icon: '📋', text: 'Chi phối hoạch định đường lối kinh tế & chính trị' },
-  { icon: '💰', text: 'Đảm bảo nhà nước phục vụ lợi ích tầng lớp tư bản độc quyền' },
+  { icon: '➡️', text: 'Chiều 1: Đại diện ĐQ → đảm nhận cương vị quan trọng trong chính phủ' },
+  { icon: '⬅️', text: 'Chiều 2: Quan chức rời chính trường → "cài" vào HĐQT các tập đoàn lớn' },
+  { icon: '📋', text: 'Mục đích: xây dựng đường lối kinh tế & chính trị có lợi cho tầng lớp ĐQ' },
+  { icon: '💰', text: 'Hệ quả: đảm bảo hoạt động nhà nước mang lại lợi ích cho tư bản độc quyền' },
 ]
 
 const TOOLS = [
@@ -88,34 +88,34 @@ export default function TuBanTaiChinh() {
 
         {/* 4.2 Revolving door */}
         <h3 className="sub-heading" data-reveal style={{ marginBottom: '1.25rem' }}>
-          4.2 Sự kết hợp về Nhân sự — "Cánh cửa xoay"
+          4.2 Đặc điểm nổi bật: Sự kết hợp về Nhân sự
         </h3>
         <div className="fin-diagram" data-reveal data-delay="100" style={{ marginBottom: '1.5rem' }}>
           <div className="fin-box fin-box--bank">
             <div className="fin-box-icon">🏭</div>
             <h3>Tổ chức Độc quyền</h3>
             <ul>
-              <li>Tập đoàn công nghiệp lớn</li>
-              <li>Ngân hàng độc quyền</li>
-              <li>Liên đoàn công nghiệp</li>
+              <li>Đại diện ĐQ → cương vị quan trọng trong chính phủ</li>
+              <li>Chi phối hoạch định đường lối kinh tế &amp; chính trị</li>
+              <li>Liên đoàn CN Ý, Đức, Anh gắn kết chặt với chính phủ</li>
             </ul>
           </div>
           <div className="fin-merge">
             <div className="merge-sym">⇄</div>
-            <div className="merge-arrow">Kết hợp nhân sự</div>
-            <p>"Cánh cửa xoay" 2 chiều</p>
+            <div className="merge-arrow">"Cánh cửa xoay" 2 chiều</div>
+            <p>Thâm nhập &amp; chi phối chính sách</p>
           </div>
           <div className="fin-box fin-box--industry">
             <div className="fin-box-icon">🏛️</div>
             <h3>Bộ máy Nhà nước</h3>
             <ul>
-              <li>Chính phủ & Quốc hội</li>
-              <li>Bộ Tài chính, Kinh tế</li>
-              <li>Cơ quan quân sự</li>
+              <li>Quan chức rời chính trường → HĐQT tập đoàn lớn</li>
+              <li>Đảm bảo nhà nước phục vụ lợi ích tư bản ĐQ</li>
+              <li>Chính phủ vận hành như "công ty cổ phần TBCN"</li>
             </ul>
           </div>
         </div>
-        <div className="oligo-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)', marginBottom: '2.5rem' }}>
+        <div className="oligo-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)', marginBottom: '1.5rem' }}>
           {REVOLVING_DOOR.map((r, i) => (
             <div key={i} className="oligo-card" data-reveal data-delay={`${i * 80}`}>
               <div className="oligo-card-icon">{r.icon}</div>
@@ -123,20 +123,64 @@ export default function TuBanTaiChinh() {
             </div>
           ))}
         </div>
-        <div className="xk-callout" data-reveal style={{ marginBottom: '2.5rem' }}>
+        <div className="xk-callout" data-reveal style={{ marginBottom: '0.75rem' }}>
           <div className="xk-callout-icon">🔄</div>
           <div>
-            <strong>Ví dụ điển hình:</strong> Ở Mỹ, hiện tượng <em>"Revolving door"</em> — cựu tướng lĩnh
-            quân đội hoặc quan chức Lầu Năm Góc thường chuyển sang làm thành viên HĐQT tập đoàn vũ khí
-            như Lockheed Martin hay Raytheon. Ở châu Âu: Liên đoàn Công nghiệp Ý, Đức, Anh gắn kết chặt với chính phủ.
+            <strong>Ví dụ điển hình — "Revolving door" (Mỹ):</strong> Cựu tướng lĩnh quân đội hoặc
+            quan chức Lầu Năm Góc thường chuyển sang làm thành viên HĐQT tập đoàn vũ khí như
+            Lockheed Martin hay Raytheon.
+          </div>
+        </div>
+        <div className="xk-callout" data-reveal style={{ marginBottom: '2.5rem' }}>
+          <div className="xk-callout-icon">🌍</div>
+          <div>
+            <strong>Châu Âu:</strong> Liên đoàn Công nghiệp Italia, Tổ chức Liên hợp Công nghệ Đức,
+            Liên đoàn Công thương Anh đều có sự gắn kết chặt chẽ với chính phủ.
+            Biểu hiện mới: thể chế đa nguyên; cơ chế thỏa hiệp giữa các nhóm lợi ích;
+            chính phủ nghị viện vận hành như <em>"công ty cổ phần tư bản chủ nghĩa"</em>.
           </div>
         </div>
 
-        {/* 4.3 & 4.4 Tools */}
+        {/* 4.3 Sở hữu Nhà nước */}
         <h3 className="sub-heading" data-reveal style={{ marginBottom: '1.25rem' }}>
-          4.3–4.4 Sở hữu Nhà nước &amp; Các công cụ điều tiết kinh tế
+          4.3 Đặc điểm nổi bật: Sở hữu Nhà nước &amp; Chức năng
         </h3>
-        <div className="oligo-grid">
+        <div className="intro-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)', marginBottom: '1.5rem' }}>
+          <div className="intro-card intro-card--blue" data-reveal data-delay="0">
+            <div className="card-icon-wrap icon-wrap--blue"><span>🏗️</span></div>
+            <h3>Hạ tầng &amp; Mở rộng sản xuất</h3>
+            <p>Hình thành dưới dạng DNNN trong lĩnh vực kết cấu hạ tầng để hỗ trợ tư bản ĐQ tư nhân;
+              tạo lập địa bàn rộng lớn cho sự phát triển của CNTB.</p>
+            <div className="tl-highlight" style={{ marginTop: '0.75rem' }}>
+              <span className="tl-highlight-icon">📌</span>
+              <em>Đường sắt, viễn thông, NASA — nhà nước đầu tư vì tư nhân thấy rủi ro cao.</em>
+            </div>
+          </div>
+          <div className="intro-card intro-card--blue" data-reveal data-delay="100">
+            <div className="card-icon-wrap icon-wrap--blue"><span>🔄</span></div>
+            <h3>Điều tiết luồng tư bản</h3>
+            <p>Giải phóng nguồn tư bản khỏi những ngành ít lãi, chuyển dịch sang ngành có hiệu quả
+              kinh tế cao hơn; làm chỗ dựa kinh tế cho điều tiết nhà nước.</p>
+            <div className="tl-highlight" style={{ marginTop: '0.75rem' }}>
+              <span className="tl-highlight-icon">📌</span>
+              <em>Nhà nước quốc hữu hóa than, luyện kim thua lỗ → tư bản chuyển vốn sang công nghệ cao, viễn thông.</em>
+            </div>
+          </div>
+        </div>
+
+        {/* 4.4 Công cụ điều tiết */}
+        <h3 className="sub-heading" data-reveal style={{ marginBottom: '1.25rem' }}>
+          4.4 Sự điều tiết kinh tế của Nhà nước tư sản
+        </h3>
+        <div className="xk-callout" data-reveal style={{ marginBottom: '1.25rem' }}>
+          <div className="xk-callout-icon">📖</div>
+          <div>
+            <strong>Bản chất (V.I. Lênin):</strong> Sự tập trung hóa và quốc tế hóa sản xuất ở quy mô lớn
+            thúc bách các nước phải thực hiện điều tiết xã hội đối với sản xuất và phân phối
+            để duy trì sự tồn tại và thích nghi của hệ thống.
+          </div>
+        </div>
+        <div className="oligo-grid" style={{ marginBottom: '1.5rem' }}>
           {TOOLS.map((t, i) => (
             <div key={t.title} className="oligo-card" data-reveal data-delay={`${i * 80}`}>
               <div className="oligo-card-icon">{t.icon}</div>
@@ -145,13 +189,14 @@ export default function TuBanTaiChinh() {
             </div>
           ))}
         </div>
-        <div className="fin-result" data-reveal data-delay="350" style={{ marginTop: '2rem' }}>
+        <div className="fin-result" data-reveal data-delay="350" style={{ marginTop: '1rem' }}>
           <div className="fin-result-icon">⚖️</div>
           <div>
             <h3>Biểu hiện mới ngày nay</h3>
-            <p>Thể chế đa nguyên phổ biến hơn; cơ chế thỏa hiệp giữa các nhóm lợi ích;
-              chính phủ nghị viện tư sản hiện đại vận hành như một <em>"công ty cổ phần tư bản chủ nghĩa"</em>
-              tối ưu hóa lợi ích độc quyền.</p>
+            <p>Chính phủ vận hành như <em>"công ty cổ phần tư bản chủ nghĩa"</em> tối ưu hóa phục vụ
+              lợi ích độc quyền; chi tiêu ngân sách bị giới lập pháp giám sát chặt chẽ hơn;
+              các chính sách kinh tế chủ yếu: chống khủng hoảng chu kỳ, chống lạm phát,
+              thúc đẩy tăng trưởng, xoa dịu mâu thuẫn giai cấp, kinh tế đối ngoại.</p>
           </div>
         </div>
       </div>
