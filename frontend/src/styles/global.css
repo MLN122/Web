@@ -351,14 +351,15 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
   padding-top: var(--nav-h);
   background: #030D1A;
 }
-.hero__parallax-bg {
+.hero__video-bg {
   position: absolute;
-  inset: -25%;
-  background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80&fit=crop');
-  background-size: cover;
-  background-position: center;
-  will-change: transform;
-  filter: brightness(0.28) saturate(1.6) hue-rotate(15deg);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.32) saturate(1.4);
+  pointer-events: none;
 }
 .hero__overlay {
   position: absolute;
@@ -1311,6 +1312,90 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
 }
 .xk-callout-icon { font-size: 1.8rem; flex-shrink: 0; }
 .xk-callout p { font-size: 0.9rem; }
+
+/* ── 13b. IMAGE BANNER ──────────────────────────────── */
+.img-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-banner__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.img-banner__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.55) saturate(1.2);
+  transition: transform 8s ease;
+}
+.img-banner:hover .img-banner__img {
+  transform: scale(1.06);
+}
+.img-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(3, 13, 26, 0.78) 0%,
+    rgba(3, 13, 26, 0.55) 50%,
+    rgba(3, 13, 26, 0.72) 100%
+  );
+}
+.img-banner__content {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+}
+.img-banner__label {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 100px;
+  border: 1px solid;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.img-banner__quote {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+.img-banner__quote p {
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  font-style: italic;
+  color: #e8eaf0;
+  line-height: 1.7;
+  margin: 0 0 0.6rem;
+}
+.img-banner__quote footer {
+  font-size: 0.85rem;
+  color: #8a9bb0;
+  letter-spacing: 0.04em;
+}
+.img-banner__caption {
+  font-size: 0.78rem;
+  color: #6b7a8d;
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .img-banner { min-height: 260px; }
+  .img-banner__content { padding: 3rem 1.2rem; }
+}
 
 /* ── 14. MEMORY GAME ────────────────────────────────── */
 .memory-wrapper {

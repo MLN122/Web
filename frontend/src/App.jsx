@@ -10,6 +10,7 @@ import MemoryGame from './components/MemoryGame'
 import Chatbox from './components/Chatbox'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import ImageBanner from './components/ImageBanner'
 
 export default function App() {
   useEffect(() => {
@@ -38,8 +39,11 @@ export default function App() {
       <main>
         <Hero />
         <GioiThieu />
+        <ImageBanner index={0} />
         <HinhThuc />
+        <ImageBanner index={1} />
         <DacDiem />
+        <ImageBanner index={2} />
         <TuBanTaiChinh />
         <XuatKhauTuBan />
         <MemoryGame />

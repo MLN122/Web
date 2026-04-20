@@ -43,14 +43,8 @@ export default function Hero() {
   const bgRef = useRef(null)
 
   useEffect(() => {
-    // ── Parallax background ──────────────────────────────
-    const bg = bgRef.current
-    let cleanupParallax = () => {}
-    if (bg) {
-      const fn = () => { bg.style.transform = `translateY(${window.pageYOffset * 0.4}px)` }
-      window.addEventListener('scroll', fn, { passive: true })
-      cleanupParallax = () => window.removeEventListener('scroll', fn)
-    }
+    // bgRef unused (video element) – no parallax needed
+    const cleanupParallax = () => {}
 
     // ── SplitText: hero title reveal (line mask) ─────────
     const titleEl = document.querySelector('.hero__title')
@@ -61,6 +55,9 @@ export default function Hero() {
         mask: 'lines',
         autoSplit: true,
         onSplit(self) {
+          // Colour the first word ("Độc") coral and second ("Quyền") pink via inline style
+          if (self.words[0]) self.words[0].style.cssText += ';color:#FF6B35;'
+          if (self.words[1]) self.words[1].style.cssText += ';color:#FF1493;'
           gsap.from(self.lines, {
             yPercent: 108,
             duration: 0.85,
@@ -92,8 +89,17 @@ export default function Hero() {
 
   return (
     <section id="hero" className="hero">
-      {/* Parallax background image */}
-      <div ref={bgRef} className="hero__parallax-bg" />
+      {/* Video background (VN.mp4 in /public) */}
+      <video
+        ref={bgRef}
+        className="hero__video-bg"
+        src="/VN.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+      />
       <div className="hero__overlay" />
 
       {/* Aurora blobs */}
@@ -123,11 +129,7 @@ export default function Hero() {
           </div>
 
           <h1 className="hero__title">
-            <span className="accent">Độc Quyền</span>
-            <br />
-            trong Chủ Nghĩa
-            <br />
-            Tư Bản
+            Độc Quyền trong Chủ Nghĩa Tư Bản
           </h1>
 
           <p className="hero__subtitle">
