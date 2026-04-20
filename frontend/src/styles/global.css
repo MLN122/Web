@@ -358,18 +358,18 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.32) saturate(1.4);
   pointer-events: none;
 }
 .hero__overlay {
   position: absolute;
   inset: 0;
+  /* Left side dark for text readability → lighter center → semi-dark right for cards contrast */
   background: linear-gradient(
-    135deg,
-    rgba(3, 13, 26, 0.7) 0%,
-    rgba(255, 107, 53, 0.2) 35%,
-    rgba(0, 200, 255, 0.16) 65%,
-    rgba(3, 13, 26, 0.72) 100%
+    to right,
+    rgba(3, 13, 26, 0.92) 0%,
+    rgba(3, 13, 26, 0.68) 38%,
+    rgba(3, 13, 26, 0.32) 58%,
+    rgba(3, 13, 26, 0.60) 100%
   );
 }
 /* Aurora blobs */
@@ -388,20 +388,20 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
 .aurora-blob--1 {
   width: 700px; height: 700px;
   top: -15%; left: -15%;
-  background: radial-gradient(circle, rgba(255,107,53,0.45), transparent 65%);
+  background: radial-gradient(circle, rgba(255,107,53,0.15), transparent 65%);
   animation-duration: 18s;
 }
 .aurora-blob--2 {
   width: 600px; height: 600px;
   top: 20%; right: -10%;
-  background: radial-gradient(circle, rgba(0,212,255,0.38), transparent 65%);
+  background: radial-gradient(circle, rgba(0,212,255,0.12), transparent 65%);
   animation-duration: 22s;
   animation-delay: 6s;
 }
 .aurora-blob--3 {
   width: 450px; height: 450px;
   bottom: -8%; left: 28%;
-  background: radial-gradient(circle, rgba(255,215,0,0.3), transparent 65%);
+  background: radial-gradient(circle, rgba(255,215,0,0.10), transparent 65%);
   animation-duration: 16s;
   animation-delay: 2s;
 }
@@ -447,7 +447,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
 }
 .hero__title {
   color: #fff;
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -537,13 +537,15 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
 .hero__orbit--1 {
   width: 340px; height: 340px;
   animation-duration: 18s;
-  border: 1px solid rgba(255, 107, 53, 0.28);
+  border: 1.5px solid rgba(255, 107, 53, 0.60);
+  box-shadow: 0 0 18px rgba(255,107,53,0.15), inset 0 0 18px rgba(255,107,53,0.08);
 }
 .hero__orbit--2 {
   width: 440px; height: 440px;
   animation-duration: 28s;
   animation-direction: reverse;
-  border: 1px solid rgba(0, 212, 255, 0.22);
+  border: 1.5px solid rgba(0, 212, 255, 0.55);
+  box-shadow: 0 0 18px rgba(0,212,255,0.12), inset 0 0 18px rgba(0,212,255,0.06);
 }
 .orbit-dot {
   position: absolute;
@@ -558,9 +560,10 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
 .orbit-dot--2 { background: #00D4FF; box-shadow: 0 0 14px #00D4FF, 0 0 28px rgba(0,212,255,0.5); }
 .hero__float-card {
   position: absolute;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(3, 13, 26, 0.72);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid rgba(255,255,255,0.22);
   border-radius: var(--r-md);
   padding: 0.75rem 1rem;
   display: flex;
@@ -570,7 +573,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
   font-size: 0.82rem;
   font-weight: 600;
   white-space: nowrap;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.55);
   animation: float-card ease-in-out infinite;
 }
 .float-icon {

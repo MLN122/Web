@@ -7,6 +7,7 @@ const THEMES = [
   { bg: 'linear-gradient(145deg, #00B4D8 0%, #0090C0 100%)', accent: '#00B4D8', accentBg: 'rgba(0,180,216,0.12)', glow: 'rgba(0,180,216,0.4)' },
   { bg: 'linear-gradient(145deg, #06D6A0 0%, #04B887 100%)', accent: '#06D6A0', accentBg: 'rgba(6,214,160,0.12)', glow: 'rgba(6,214,160,0.4)' },
   { bg: 'linear-gradient(145deg, #FFB700 0%, #E09D00 100%)', accent: '#FFB700', accentBg: 'rgba(255,183,0,0.12)', glow: 'rgba(255,183,0,0.4)' },
+  { bg: 'linear-gradient(145deg, #9B5DE5 0%, #7B3FC5 100%)', accent: '#9B5DE5', accentBg: 'rgba(155,93,229,0.12)', glow: 'rgba(155,93,229,0.4)' },
 ]
 
 const FORMS = [
@@ -16,42 +17,49 @@ const FORMS = [
     vn: 'Cartel',
     phonetic: 'Các-ten',
     hint: 'Thỏa thuận · Lỏng lẻo nhất',
-    desc: 'Hình thức độc quyền thấp nhất, liên kết lỏng lẻo nhất. Các thành viên ký thỏa thuận về giá cả và phân chia thị trường, nhưng vẫn giữ hoàn toàn độc lập về sản xuất và kinh doanh.',
-    features: ['Thỏa thuận giá cả', 'Phân chia thị trường', 'SX & KD vẫn độc lập', 'Dễ tan vỡ khi mâu thuẫn'],
-    example: 'OPEC (tổ chức các nước xuất khẩu dầu mỏ)',
+    desc: 'Liên minh về giá cả, phân chia thị trường và sản lượng. Các thành viên vẫn hoàn toàn độc lập về sản xuất và lưu thông. Liên kết lỏng lẻo, dễ tan vỡ.',
+    features: ['Thỏa thuận giá cả & sản lượng', 'Phân chia thị trường', 'Sản xuất & KD vẫn độc lập', 'Dễ tan vỡ khi mâu thuẫn'],
+    example: 'OPEC: phân chia hạn ngạch khai thác cho từng quốc gia thành viên để giữ giá dầu ở mức có lợi.',
   },
   {
     num: '02',
     icon: '🔗',
     vn: 'Syndicat',
-    phonetic: 'Xanh-đi-ca',
-    hint: 'Văn phòng chung · Cao hơn Cartel',
-
-    desc: 'Cao hơn Cartel một bậc. Thành lập văn phòng mua bán chung để thống nhất giá bán và điều kiện giao hàng, nhưng sản xuất vẫn tiến hành độc lập tại mỗi xí nghiệp thành viên.',
-    features: ['Văn phòng thương mại chung', 'Thống nhất giá bán', 'SX vẫn độc lập', 'Chia lợi nhuận theo SX'],
-    example: 'Các syndicate than đá ở Đức đầu TK XX',
+    phonetic: 'Xinh-đi-ca',
+    hint: 'Độc quyền lưu thông · Pháp',
+    desc: 'Độc quyền về lưu thông (mua - bán). Các xí nghiệp vẫn độc lập về sản xuất nhưng mọi việc mua nguyên liệu và bán hàng đều thực hiện qua văn phòng chung. Từng phát triển nhất ở Pháp.',
+    features: ['Văn phòng mua bán chung', 'Thống nhất giá bán & điều kiện', 'Sản xuất vẫn độc lập', 'Chia lợi nhuận theo sản lượng'],
+    example: 'De Beers TK 20: độc quyền thu mua và phân phối kim cương thô toàn thế giới — các mỏ tự khai thác nhưng bán đều qua De Beers.',
   },
   {
     num: '03',
     icon: '🏢',
     vn: 'Trust',
-    phonetic: 'Tờ-rớt',
-    hint: 'Ban quản trị chung · Chặt chẽ',
-
-    desc: 'Liên kết chặt chẽ. Các thành viên giao toàn bộ tư bản cho ban quản trị thống nhất và trở thành cổ đông. Mất hoàn toàn tính độc lập về cả sản xuất lẫn kinh doanh.',
-    features: ['Ban quản trị thống nhất', 'Thành viên = Cổ đông', 'Mất độc lập SX & KD', 'Chia lợi nhuận theo CP'],
-    example: 'Standard Oil Trust (Rockefeller, Mỹ)',
+    phonetic: 'Tơ-rớt',
+    hint: 'Ban quản trị chung · Mỹ',
+    desc: 'Thống nhất cả sản xuất và lưu thông dưới một hội đồng quản trị. Các nhà tư bản trở thành cổ đông thu lợi nhuận cổ phần. Mất hoàn toàn tính độc lập. Nước Mỹ là quê hương của Trust.',
+    features: ['Ban quản trị thống nhất', 'Thành viên → Cổ đông', 'Mất độc lập SX & lưu thông', 'Chia lợi nhuận theo cổ phần'],
+    example: 'Standard Oil Trust của Rockefeller: kiểm soát từ khai thác, lọc dầu, vận chuyển đến bán lẻ dầu mỏ tại Mỹ cuối TK 19.',
   },
   {
     num: '04',
+    icon: '🏦',
+    vn: 'Consortium',
+    phonetic: 'Công-xoóc-xi-om',
+    hint: 'Ngân hàng + Công nghiệp',
+    desc: 'Hình thức đa ngành, liên kết giữa ngân hàng và công nghiệp để thực hiện các nghiệp vụ tài chính lớn. Ngân hàng nắm quyền chi phối toàn bộ hoạt động của liên minh.',
+    features: ['Liên kết ngân hàng & công nghiệp', 'Tài trợ các dự án khổng lồ', 'Kiểm soát qua vốn tín dụng', 'Phạm vi quốc tế'],
+    example: 'Các ngân hàng Morgan (Mỹ) liên kết với tập đoàn thép, đường sắt để tài trợ và kiểm soát các dự án hạ tầng khổng lồ.',
+  },
+  {
+    num: '05',
     icon: '🌐',
-    vn: 'Concern',
-    phonetic: 'Công-xéc-nơ',
-    hint: 'Đa ngành · Toàn cầu · Cao nhất',
-
-    desc: 'Hình thức liên kết cao nhất, bao gồm nhiều trust và syndicate, hoạt động đa ngành (công nghiệp, thương mại, ngân hàng, bảo hiểm), gắn chặt với ngân hàng lớn trên phạm vi quốc tế.',
-    features: ['Đa ngành: CN + TM + NH', 'Nhiều Trust + Syndicat', 'Liên kết ngân hàng lớn', 'Phạm vi toàn cầu'],
-    example: 'Samsung Group, Mitsubishi, GE',
+    vn: 'Conglomerate',
+    phonetic: 'Công-glomê-rết',
+    hint: 'Đa ngành · Xuyên quốc gia · Hiện đại',
+    desc: 'Hình thức độc quyền hiện đại, kết hợp hàng chục, hàng trăm công ty trong nhiều lĩnh vực hoàn toàn khác nhau, tạo thành các tập đoàn xuyên quốc gia khổng lồ.',
+    features: ['Hàng trăm công ty con', 'Đa ngành hoàn toàn khác nhau', 'Xuyên quốc gia (TNC)', 'Doanh thu lớn hơn nhiều quốc gia'],
+    example: 'Samsung (Hàn Quốc) và Mitsubishi (Nhật Bản): kinh doanh từ điện thoại, đóng tàu, ngân hàng, bảo hiểm đến hóa chất và bất động sản.',
   },
 ]
 
@@ -136,11 +144,11 @@ export default function HinhThuc() {
     <section id="hinh-thuc" className="section section--alt">
       <div className="section__container">
         <header className="section__header" data-reveal>
-          <span className="section__badge badge--coral">Hình thức tổ chức</span>
-          <h2 className="section__title">4 Hình Thức Độc Quyền</h2>
+          <span className="section__badge badge--coral">Chương 2</span>
+          <h2 className="section__title">5 Hình Thức Tổ Chức Độc Quyền</h2>
           <p className="section__desc">
-            Tổ chức độc quyền phát triển từ liên kết lỏng lẻo đến thống nhất toàn diện.
-            Nhấn thẻ để lật xem chi tiết từng hình thức.
+            Các tổ chức độc quyền biến đổi từ thấp đến cao: từ thỏa thuận lỏng lẻo
+            đến tập đoàn xuyên quốc gia. Nhấn thẻ để xem chi tiết.
           </p>
         </header>
 
