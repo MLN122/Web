@@ -1,79 +1,79 @@
-﻿// frontend/src/components/DacDiem.jsx
+// frontend/src/components/DacDiem.jsx
 const POSITIVES = [
   {
-    icon: 'ðŸ”¬',
-    title: 'ThÃºc Ä‘áº©y nghiÃªn cá»©u khoa há»c ká»¹ thuáº­t',
-    desc: 'CÃ¡c táº­p Ä‘oÃ n lá»›n cÃ³ nguá»“n vá»‘n khá»•ng lá»“ Ä‘á»ƒ Ä‘áº§u tÆ° R&D, táº¡o ra nhá»¯ng Ä‘á»™t phÃ¡ cÃ´ng nghá»‡ thay Ä‘á»•i tháº¿ giá»›i.',
-    example: 'Google, Microsoft rÃ³t hÃ ng tá»· USD nghiÃªn cá»©u TrÃ­ tuá»‡ nhÃ¢n táº¡o â€” Ä‘iá»u mÃ  doanh nghiá»‡p nhá» khÃ´ng thá»ƒ lÃ m.',
+    icon: '🔬',
+    title: 'Thúc đẩy nghiên cứu khoa học kỹ thuật',
+    desc: 'Các tập đoàn lớn có nguồn vốn khổng lồ để đầu tư R&D, tạo ra những đột phá công nghệ thay đổi thế giới.',
+    example: 'Google, Microsoft rót hàng tỷ USD nghiên cứu Trí tuệ nhân tạo — điều mà doanh nghiệp nhỏ không thể làm.',
     badgeCls: 'tl-badge--mint',
   },
   {
-    icon: 'âš¡',
-    title: 'TÄƒng nÄƒng suáº¥t & nÄƒng lá»±c cáº¡nh tranh',
-    desc: 'Sáº£n xuáº¥t quy mÃ´ lá»›n giáº£m chi phÃ­ Ä‘Æ¡n vá»‹, Ã¡p dá»¥ng cÃ´ng nghá»‡ tiÃªn tiáº¿n, nÃ¢ng cao hiá»‡u quáº£ toÃ n ná»n kinh táº¿.',
-    example: 'DÃ¢y chuyá»n sáº£n xuáº¥t Ã´ tÃ´ Toyota Ã¡p dá»¥ng "Just-in-time" â€” chuáº©n má»±c toÃ n cáº§u vá» nÄƒng suáº¥t cÃ´ng nghiá»‡p.',
+    icon: '⚡',
+    title: 'Tăng năng suất & năng lực cạnh tranh',
+    desc: 'Sản xuất quy mô lớn giảm chi phí đơn vị, áp dụng công nghệ tiên tiến, nâng cao hiệu quả toàn nền kinh tế.',
+    example: 'Dây chuyền sản xuất ô tô Toyota áp dụng "Just-in-time" — chuẩn mực toàn cầu về năng suất công nghiệp.',
     badgeCls: 'tl-badge--blue',
   },
   {
-    icon: 'ðŸ™ï¸',
-    title: 'ThÃºc Ä‘áº©y kinh táº¿ phÃ¡t triá»ƒn hiá»‡n Ä‘áº¡i',
-    desc: 'XÃ¢y dá»±ng háº¡ táº§ng quy mÃ´ lá»›n, kÃ©o theo sá»± phÃ¡t triá»ƒn cá»§a cÃ¡c ngÃ nh cÃ´ng nghiá»‡p phá»¥ trá»£ vÃ  dá»‹ch vá»¥.',
-    example: 'DÆ°á»›i CNTB, tháº¿ giá»›i tráº£i qua 4 Cuá»™c CÃ¡ch máº¡ng cÃ´ng nghiá»‡p, táº¡o ra khá»‘i tÃ i sáº£n váº­t cháº¥t lá»›n hÆ¡n táº¥t cáº£ cÃ¡c thá»i ká»³ trÆ°á»›c cá»™ng láº¡i.',
+    icon: '🏙️',
+    title: 'Thúc đẩy kinh tế phát triển hiện đại',
+    desc: 'Xây dựng hạ tầng quy mô lớn, kéo theo sự phát triển của các ngành công nghiệp phụ trợ và dịch vụ.',
+    example: 'Dưới CNTB, thế giới trải qua 4 Cuộc Cách mạng công nghiệp, tạo ra khối tài sản vật chất lớn hơn tất cả các thời kỳ trước cộng lại.',
     badgeCls: 'tl-badge--yellow',
   },
 ]
 
 const NEGATIVES = [
   {
-    icon: 'ðŸ’¸',
-    title: 'Thiá»‡t háº¡i cho ngÆ°á»i tiÃªu dÃ¹ng',
-    desc: 'Äá»‹nh giÃ¡ Ä‘á»™c quyá»n: mua tháº¥p, bÃ¡n cao, Ã¡p Ä‘áº·t giÃ¡ khÃ´ng pháº£n Ã¡nh chi phÃ­ thá»±c táº¿.',
-    example: 'CÃ´ng ty dÆ°á»£c pháº©m Ä‘á»™c quyá»n Ä‘á»‹nh giÃ¡ thuá»‘c Ä‘áº·c trá»‹ bá»‡nh hiá»ƒm nghÃ¨o cao gáº¥p hÃ ng chá»¥c láº§n chi phÃ­ sáº£n xuáº¥t.',
+    icon: '💸',
+    title: 'Thiệt hại cho người tiêu dùng',
+    desc: 'Định giá độc quyền: mua thấp, bán cao, áp đặt giá không phản ánh chi phí thực tế.',
+    example: 'Công ty dược phẩm độc quyền định giá thuốc đặc trị bệnh hiểm nghèo cao gấp hàng chục lần chi phí sản xuất.',
     badgeCls: 'tl-badge--purple',
   },
   {
-    icon: 'ðŸ”’',
-    title: 'KÃ¬m hÃ£m tiáº¿n bá»™ ká»¹ thuáº­t',
-    desc: 'Mua láº¡i vÃ  "chÃ´n vÃ¹i" cÃ¡c sÃ¡ng cháº¿ Ä‘á»™t phÃ¡ Ä‘á»ƒ duy trÃ¬ vá»‹ tháº¿ Ä‘á»™c quyá»n vÃ  báº£o vá»‡ lá»£i Ã­ch hiá»‡n táº¡i.',
-    example: 'CÃ´ng ty dáº§u má» lá»›n tá»«ng mua vÃ  cáº¥t giáº¥u báº±ng sÃ¡ng cháº¿ xe Ä‘iá»‡n Ä‘á»ƒ báº£o vá»‡ ngÃ nh cÃ´ng nghiá»‡p xe Ä‘á»™ng cÆ¡ Ä‘á»‘t trong.',
+    icon: '🔒',
+    title: 'Kìm hãm tiến bộ kỹ thuật',
+    desc: 'Mua lại và "chôn vùi" các sáng chế đột phá để duy trì vị thế độc quyền và bảo vệ lợi ích hiện tại.',
+    example: 'Công ty dầu mỏ lớn từng mua và cất giấu bằng sáng chế xe điện để bảo vệ ngành công nghiệp xe động cơ đốt trong.',
     badgeCls: 'tl-badge--pink',
   },
   {
-    icon: 'ðŸ“Š',
-    title: 'Gia tÄƒng phÃ¢n hÃ³a giÃ u nghÃ¨o',
-    desc: 'Lá»£i nhuáº­n Ä‘á»™c quyá»n táº­p trung vÃ o tay thiá»ƒu sá»‘ tÆ° sáº£n, má»Ÿ rá»™ng khoáº£ng cÃ¡ch thu nháº­p trong xÃ£ há»™i.',
-    example: '1% ngÆ°á»i giÃ u nháº¥t tháº¿ giá»›i náº¯m giá»¯ lÆ°á»£ng tÃ i sáº£n lá»›n hÆ¡n tá»•ng tÃ i sáº£n cá»§a nhiá»u quá»‘c gia cá»™ng láº¡i.',
+    icon: '📊',
+    title: 'Gia tăng phân hóa giàu nghèo',
+    desc: 'Lợi nhuận độc quyền tập trung vào tay thiểu số tư sản, mở rộng khoảng cách thu nhập trong xã hội.',
+    example: '1% người giàu nhất thế giới nắm giữ lượng tài sản lớn hơn tổng tài sản của nhiều quốc gia cộng lại.',
     badgeCls: 'tl-badge--yellow',
   },
 ]
 
 const COMPETITIONS = [
   {
-    num: 'â‘ ',
-    title: 'ÄQ vs NgoÃ i Äá»™c Quyá»n',
-    icon: 'ðŸ¦',
+    num: '①',
+    title: 'ĐQ vs Ngoài Độc Quyền',
+    icon: '🦁',
     side: 'left',
     badgeCls: 'tl-badge--purple',
-    content: 'CÃ¡c tá»• chá»©c Ä‘á»™c quyá»n dÃ¹ng sá»©c máº¡nh kinh táº¿ Ä‘á»ƒ chÃ¨n Ã©p, chi phá»‘i hoáº·c thÃ´n tÃ­nh cÃ¡c Ä‘á»‘i thá»§ nhá» láº» hÆ¡n, duy trÃ¬ vá»‹ tháº¿ thá»‘ng trá»‹ thá»‹ trÆ°á»ng.',
-    highlight: 'Walmart Ã©p giÃ¡ nhÃ  cung cáº¥p & bÃ¡n siÃªu ráº» â†’ cÃ¡c cá»­a hÃ ng táº¡p hÃ³a Ä‘á»‹a phÆ°Æ¡ng pháº£i Ä‘Ã³ng cá»­a.',
+    content: 'Các tổ chức độc quyền dùng sức mạnh kinh tế để chèn ép, chi phối hoặc thôn tính các đối thủ nhỏ lẻ hơn, duy trì vị thế thống trị thị trường.',
+    highlight: 'Walmart ép giá nhà cung cấp & bán siêu rẻ → các cửa hàng tạp hóa địa phương phải đóng cửa.',
   },
   {
-    num: 'â‘¡',
-    title: 'Giá»¯a cÃ¡c Tá»• chá»©c ÄQ',
-    icon: 'âš”ï¸',
+    num: '②',
+    title: 'Giữa các Tổ chức ĐQ',
+    icon: '⚔️',
     side: 'right',
     badgeCls: 'tl-badge--pink',
-    content: 'Äá»‘i Ä‘áº§u giá»¯a cÃ¡c "Ã´ng lá»›n" Ä‘á»ƒ giÃ nh thá»‹ trÆ°á»ng, nguá»“n nguyÃªn liá»‡u vÃ  cÆ¡ há»™i Ä‘áº§u tÆ° â€” lan rá»™ng ra pháº¡m vi toÃ n cáº§u giá»¯a cÃ¡c TNC.',
-    highlight: 'Apple vs Samsung tranh giÃ nh smartphone toÃ n cáº§u; Boeing vs Airbus tranh giÃ nh Ä‘Æ¡n hÃ ng hÃ ng khÃ´ng.',
+    content: 'Đối đầu giữa các "ông lớn" để giành thị trường, nguồn nguyên liệu và cơ hội đầu tư — lan rộng ra phạm vi toàn cầu giữa các TNC.',
+    highlight: 'Apple vs Samsung tranh giành smartphone toàn cầu; Boeing vs Airbus tranh giành đơn hàng hàng không.',
   },
   {
-    num: 'â‘¢',
-    title: 'Ná»™i bá»™ Tá»• chá»©c ÄQ',
-    icon: 'ðŸ¤¼',
+    num: '③',
+    title: 'Nội bộ Tổ chức ĐQ',
+    icon: '🤼',
     side: 'left',
     badgeCls: 'tl-badge--mint',
-    content: 'Ngay trong liÃªn minh (Cartel, Syndicat, Trust), cÃ¡c thÃ nh viÃªn váº«n cáº¡nh tranh ngáº§m Ä‘á»ƒ giÃ nh lá»£i tháº¿ vá» sáº£n lÆ°á»£ng, thá»‹ trÆ°á»ng vÃ  tá»· lá»‡ phÃ¢n chia lá»£i nhuáº­n.',
-    highlight: 'OPEC: dÃ¹ cÃ³ thá»a thuáº­n, cÃ¡c quá»‘c gia thÃ nh viÃªn Ä‘Ã´i khi lÃ©n khai thÃ¡c vÆ°á»£t háº¡n ngáº¡ch Ä‘á»ƒ tá»‘i Ä‘a hÃ³a lá»£i Ã­ch riÃªng.',
+    content: 'Ngay trong liên minh (Cartel, Syndicat, Trust), các thành viên vẫn cạnh tranh ngầm để giành lợi thế về sản lượng, thị trường và tỷ lệ phân chia lợi nhuận.',
+    highlight: 'OPEC: dù có thỏa thuận, các quốc gia thành viên đôi khi lén khai thác vượt hạn ngạch để tối đa hóa lợi ích riêng.',
   },
 ]
 
@@ -82,17 +82,17 @@ export default function DacDiem() {
     <section id="dac-diem" className="section">
       <div className="section__container">
         <header className="section__header" data-reveal>
-          <span className="section__badge badge--mint">ChÆ°Æ¡ng 3</span>
-          <h2 className="section__title">TÃ¡c Äá»™ng cá»§a Äá»™c Quyá»n trong Kinh Táº¿ Thá»‹ TrÆ°á»ng</h2>
+          <span className="section__badge badge--mint">Chương 3</span>
+          <h2 className="section__title">Tác Động của Độc Quyền trong Kinh Tế Thị Trường</h2>
           <p className="section__desc">
-            Äá»™c quyá»n mang láº¡i cáº£ tÃ¡c Ä‘á»™ng tÃ­ch cá»±c láº«n tiÃªu cá»±c cho ná»n kinh táº¿,
-            Ä‘á»“ng thá»i táº¡o ra ba tráº¡ng thÃ¡i cáº¡nh tranh Ä‘áº·c thÃ¹ trong giai Ä‘oáº¡n CNTB ÄQ.
+            Độc quyền mang lại cả tác động tích cực lẫn tiêu cực cho nền kinh tế,
+            đồng thời tạo ra ba trạng thái cạnh tranh đặc thù trong giai đoạn CNTB ĐQ.
           </p>
         </header>
 
         {/* Positives */}
         <h3 className="sub-heading" data-reveal style={{ color: '#06D6A0', marginBottom: '1.25rem' }}>
-          âœ… TÃ¡c Ä‘á»™ng TÃ­ch cá»±c
+          ✅ Tác động Tích cực
         </h3>
         <div className="intro-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', marginBottom: '2.5rem' }} data-reveal>
           {POSITIVES.map((p, i) => (
@@ -103,7 +103,7 @@ export default function DacDiem() {
               <h3>{p.title}</h3>
               <p>{p.desc}</p>
               <div className="tl-highlight" style={{ marginTop: '0.75rem' }}>
-                <span className="tl-highlight-icon">ðŸ“Œ</span>
+                <span className="tl-highlight-icon">📌</span>
                 <em>{p.example}</em>
               </div>
             </div>
@@ -112,7 +112,7 @@ export default function DacDiem() {
 
         {/* Negatives */}
         <h3 className="sub-heading" data-reveal style={{ color: '#FF6B35', marginBottom: '1.25rem' }}>
-          âŒ TÃ¡c Ä‘á»™ng TiÃªu cá»±c
+          ❌ Tác động Tiêu cực
         </h3>
         <div className="intro-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', marginBottom: '3rem' }} data-reveal>
           {NEGATIVES.map((n, i) => (
@@ -123,7 +123,7 @@ export default function DacDiem() {
               <h3>{n.title}</h3>
               <p>{n.desc}</p>
               <div className="tl-highlight" style={{ marginTop: '0.75rem' }}>
-                <span className="tl-highlight-icon">âš ï¸</span>
+                <span className="tl-highlight-icon">⚠️</span>
                 <em>{n.example}</em>
               </div>
             </div>
@@ -132,7 +132,7 @@ export default function DacDiem() {
 
         {/* 3 Competition types */}
         <h3 className="sub-heading" data-reveal style={{ marginBottom: '1.5rem' }}>
-          âš¡ Quan há»‡ Cáº¡nh tranh trong Tráº¡ng thÃ¡i Äá»™c quyá»n
+          ⚡ Quan hệ Cạnh tranh trong Trạng thái Độc quyền
         </h3>
         <div className="timeline">
           {COMPETITIONS.map((c, i) => (
@@ -154,7 +154,7 @@ export default function DacDiem() {
                 </div>
                 <p className="tl-detail">{c.content}</p>
                 <div className="tl-highlight">
-                  <span className="tl-highlight-icon">ðŸ’¡</span>
+                  <span className="tl-highlight-icon">💡</span>
                   <em>{c.highlight}</em>
                 </div>
               </div>
