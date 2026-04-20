@@ -112,7 +112,7 @@ export default function Hero() {
         {/* Left column */}
         <div className="hero__left">
           <div className="hero__badge">
-            📖 Kinh Tế Chính Trị Mác-Lênin · Chương 5
+            📖 Kinh Tế Chính Trị Mác-Lênin · Phần 5
           </div>
 
           <h1 className="hero__title">

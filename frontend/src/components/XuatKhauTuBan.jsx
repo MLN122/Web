@@ -90,7 +90,7 @@ export default function XuatKhauTuBan() {
     <section id="xuat-khau" className="section">
       <div className="section__container">
         <header className="section__header" data-reveal>
-          <span className="section__badge badge--yellow">Chương 5 &amp; 6</span>
+          <span className="section__badge badge--yellow">Phần 5 &amp; 6</span>
           <h2 className="section__title">Biểu hiện Mới &amp; Vai trò Lịch sử của CNTB</h2>
           <p className="section__desc">
             Độc quyền ngày nay mang diện mạo mới — từ TNC, tài chính toàn cầu đến
@@ -108,7 +108,7 @@ export default function XuatKhauTuBan() {
               className="section-illus__img"
               loading="lazy"
             />
-            <span className="section-illus__ai-badge">🤖 Minh họạ · Tạo bởi AI</span>
+            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
           </div>
           <p className="section-illus__caption">
             Hình ảnh minh họạ: Mạng lưới độc quyền xuyên quốc gia trong kỷ nguyên số — biểu tượng của chủ nghĩa đế quốc hiện đại.
@@ -142,6 +142,22 @@ export default function XuatKhauTuBan() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Mid-section illustration */}
+        <div className="section-illus" data-reveal style={{ margin: '2.5rem 0' }}>
+          <div className="section-illus__wrap">
+            <img
+              src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1400&q=80&fit=crop"
+              alt="Cảng container quốc tế — minh họa xuất khẩu tư bản và thương mại toàn cầu"
+              className="section-illus__img"
+              loading="lazy"
+            />
+            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
+          </div>
+          <p className="section-illus__caption">
+            Hình ảnh minh họa: Cảng container quốc tế — biểu tượng dòng chảy tư bản xuyên quốc gia và phân công lao động thế giới.
+          </p>
         </div>
 
         {/* Historical role */}

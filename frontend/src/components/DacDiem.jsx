@@ -82,7 +82,7 @@ export default function DacDiem() {
     <section id="dac-diem" className="section">
       <div className="section__container">
         <header className="section__header" data-reveal>
-          <span className="section__badge badge--mint">Chương 3</span>
+          <span className="section__badge badge--mint">Phần 3</span>
           <h2 className="section__title">Tác Động của Độc Quyền trong Kinh Tế Thị Trường</h2>
           <p className="section__desc">
             Độc quyền mang lại cả tác động tích cực lẫn tiêu cực cho nền kinh tế,
@@ -99,7 +99,7 @@ export default function DacDiem() {
               className="section-illus__img"
               loading="lazy"
             />
-            <span className="section-illus__ai-badge">🤖 Minh họạ · Tạo bởi AI</span>
+            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
           </div>
           <p className="section-illus__caption">
             Hình ảnh minh họạ: Trung tâm tài chính độc quyền — biểu tượng quyền lực kinh tế tập trung trong chủ nghĩa tư bản hiện đại.
@@ -175,6 +175,22 @@ export default function DacDiem() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Mid-section illustration */}
+        <div className="section-illus" data-reveal style={{ marginBottom: '2.5rem' }}>
+          <div className="section-illus__wrap">
+            <img
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1400&q=80&fit=crop"
+              alt="Biểu đồ thị trường — minh họa tác động kinh tế của độc quyền"
+              className="section-illus__img"
+              loading="lazy"
+            />
+            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
+          </div>
+          <p className="section-illus__caption">
+            Hình ảnh minh họa: Phân hóa thị trường — tác động tích cực và tiêu cực của độc quyền đến nền kinh tế thế giới.
+          </p>
         </div>
 
         {/* 3 Competition types */}

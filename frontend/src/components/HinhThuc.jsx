@@ -144,7 +144,7 @@ export default function HinhThuc() {
     <section id="hinh-thuc" className="section section--alt">
       <div className="section__container">
         <header className="section__header" data-reveal>
-          <span className="section__badge badge--coral">Chương 2</span>
+          <span className="section__badge badge--coral">Phần 2</span>
           <h2 className="section__title">5 Hình Thức Tổ Chức Độc Quyền</h2>
           <p className="section__desc">
             Các tổ chức độc quyền biến đổi từ thấp đến cao: từ thỏa thuận lỏng lẻo
@@ -161,7 +161,7 @@ export default function HinhThuc() {
               className="section-illus__img"
               loading="lazy"
             />
-            <span className="section-illus__ai-badge">🤖 Minh họạ · Tạo bởi AI</span>
+            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
           </div>
           <p className="section-illus__caption">
             Hình ảnh minh họạ: Phòng họi nghị của một tín-tơ-tư (Trust) — hình thức liên kết tư bản trọn vẹn nhất trong thế kỷ XX.
@@ -251,6 +251,22 @@ export default function HinhThuc() {
             {FORMS[activeIdx].num} / {FORMS[activeIdx].vn}
             <span className="carousel-label-sub"> — {isFlipped ? 'Chi tiết' : FORMS[activeIdx].hint}</span>
           </div>
+        </div>
+
+        {/* Second illustration */}
+        <div className="section-illus" data-reveal style={{ marginTop: '2.5rem' }}>
+          <div className="section-illus__wrap">
+            <img
+              src="https://images.unsplash.com/photo-1560472355-536de3962603?w=1400&q=80&fit=crop"
+              alt="Hội đồng quản trị tập đoàn — minh họa cơ cấu tổ chức độc quyền"
+              className="section-illus__img"
+              loading="lazy"
+            />
+            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
+          </div>
+          <p className="section-illus__caption">
+            Hình ảnh minh họa: Phòng họp hội đồng quản trị — từ Cartel đến Concern, các hình thức tổ chức độc quyền ngày càng chặt chẽ và quy mô.
+          </p>
         </div>
       </div>
     </section>

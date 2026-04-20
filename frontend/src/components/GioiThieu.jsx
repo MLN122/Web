@@ -44,13 +44,29 @@ export default function GioiThieu() {
     <section id="gioi-thieu" className="section">
       <div className="section__container">
         <header className="section__header" data-reveal>
-          <span className="section__badge badge--purple">Chương 1</span>
+          <span className="section__badge badge--purple">Phần 1</span>
           <h2 className="section__title">Khái niệm &amp; Nguyên nhân hình thành Độc quyền</h2>
           <p className="section__desc">
             Cuối TK XIX — đầu TK XX, cạnh tranh tự do tất yếu dẫn tới tập trung sản xuất và tư bản,
             hình thành <strong>độc quyền</strong> — xu hướng kinh tế của CNTB giai đoạn mới.
           </p>
         </header>
+
+        {/* Minh họa ảnh AI */}
+        <div className="section-illus" data-reveal>
+          <div className="section-illus__wrap">
+            <img
+              src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1400&q=80&fit=crop"
+              alt="Sàn giao dịch chứng khoán New York — minh họa sự hình thành độc quyền tài chính"
+              className="section-illus__img"
+              loading="lazy"
+            />
+            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
+          </div>
+          <p className="section-illus__caption">
+            Hình ảnh minh họa: Sàn giao dịch chứng khoán — nơi tập trung tư bản và khởi nguồn của các tổ chức độc quyền tài chính thế giới.
+          </p>
+        </div>
 
         {/* Definition banner */}
         <div className="quote-banner" data-reveal data-delay="200">

@@ -84,7 +84,7 @@ export default function TuBanTaiChinh() {
     <section id="tu-ban" className="section section--alt">
       <div className="section__container">
         <header className="section__header" data-reveal>
-          <span className="section__badge badge--blue">Chương 4</span>
+          <span className="section__badge badge--blue">Phần 4</span>
           <h2 className="section__title">Độc Quyền Nhà Nước trong CNTB</h2>
           <p className="section__desc">
             Nhà nước nắm giữ vị thế độc quyền, duy trì sức mạnh các tổ chức ĐQ tư nhân
@@ -101,7 +101,7 @@ export default function TuBanTaiChinh() {
               className="section-illus__img"
               loading="lazy"
             />
-            <span className="section-illus__ai-badge">🤖 Minh họạ · Tạo bởi AI</span>
+            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
           </div>
           <p className="section-illus__caption">
             Hình ảnh minh họạ: Ngân hàng trung ương và các tập đoàn độc quyền nhà nước — nền tảng của sự điều tiết kinh tế tư sản.
@@ -212,6 +212,22 @@ export default function TuBanTaiChinh() {
               như một <em>"công ty cổ phần tư bản chủ nghĩa"</em>.
             </p>
           </div>
+        </div>
+
+        {/* Mid-section illustration */}
+        <div className="section-illus" data-reveal style={{ marginBottom: '2.5rem' }}>
+          <div className="section-illus__wrap">
+            <img
+              src="https://images.unsplash.com/photo-1569025743873-ea3a9ade89f9?w=1400&q=80&fit=crop"
+              alt="Tòa nhà chính phủ — minh họa độc quyền nhà nước trong chủ nghĩa tư bản"
+              className="section-illus__img"
+              loading="lazy"
+            />
+            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
+          </div>
+          <p className="section-illus__caption">
+            Hình ảnh minh họa: Kiến trúc quyền lực nhà nước — biểu tượng sự kết hợp giữa bộ máy nhà nước và các tổ chức độc quyền tư nhân.
+          </p>
         </div>
 
         {/* 4.3 Sở hữu Nhà nước */}

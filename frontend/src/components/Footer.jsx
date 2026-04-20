@@ -35,7 +35,7 @@ export default function Footer() {
               <span>Kinh Tế Chính Trị Mác-Lênin</span>
             </div>
             <p className="footer-desc">
-              Đề tài: Độc Quyền trong Chủ Nghĩa Tư Bản — Chương 5 KTCT Mác-Lênin.
+              Đề tài: Độc Quyền trong Chủ Nghĩa Tư Bản — Phần 5 KTCT Mác-Lênin.
               Website được xây dựng phục vụ học tập và nghiên cứu.
             </p>
           </div>

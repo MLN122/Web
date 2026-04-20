@@ -29,7 +29,7 @@ export default function Chatbox() {
     {
       id: 0,
       role: 'bot',
-      html: '👋 Xin chào! Mình là <strong>AI Độc Quyền</strong> — trợ lý học tập về chương Độc Quyền KTCT Mác-Lênin.<br/><br/>Bạn muốn hỏi gì về nội dung bài học?',
+      html: '👋 Xin chào! Mình là <strong>AI MLN122</strong> — trợ lý học tập về phần Độc Quyền KTCT Mác-Lênin.<br/><br/>Bạn muốn hỏi gì về nội dung bài học?',
       time: now(),
     },
   ])
@@ -88,7 +88,7 @@ export default function Chatbox() {
         <div className="chat-header">
           <div className="chat-avatar">🤖</div>
           <div className="chat-header-info">
-            <div className="chat-header-name">AI Độc Quyền</div>
+            <div className="chat-header-name">AI MLN122</div>
             <div className="chat-header-status">● Trực tuyến · Sẵn sàng</div>
           </div>
           <button className="chat-close" onClick={() => setOpen(false)} aria-label="Đóng">✕</button>
