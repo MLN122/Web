@@ -67,7 +67,7 @@ export default function HinhThuc() {
   const [activeIdx, setActiveIdx] = useState(0)
   const [isFlipped, setIsFlipped] = useState(false)
   const isAnimating = useRef(false)
-  const deckOrder = useRef([0, 1, 2, 3])
+  const deckOrder = useRef([0, 1, 2, 3, 4])
   const wrapperRefs = useRef([])
   const innerRefs = useRef([])
 
