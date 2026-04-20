@@ -76,7 +76,33 @@ body {
   background: var(--bg-base);
   color: var(--text-body);
   line-height: 1.7;
-  overflow-x: hidden;
+  overflow: hidden; /* GSAP Observer handles all scroll */
+  height: 100vh;
+}
+
+/* ── GSAP FULLSCREEN SCROLL ─────────────────────────── */
+.section-slide {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100vh;
+  visibility: hidden;
+}
+.gsap-outer {
+  width: 100%; height: 100%;
+  overflow: hidden;
+}
+.gsap-inner {
+  width: 100%; height: 100%;
+  overflow: hidden;
+}
+.section-bg {
+  width: 100%; height: 100%;
+  overflow: hidden;
+}
+.section-bg .section,
+.section-bg footer {
+  width: 100%;
+  min-height: 100vh;
 }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
@@ -566,9 +592,11 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
   font-size: 1rem;
   flex-shrink: 0;
 }
-.float-card--1 { top: 10%;  right: 0;   animation-duration: 5s;   animation-delay: 0s; }
-.float-card--2 { top: 42%;  right: -5%; animation-duration: 6.5s; animation-delay: 1s; }
-.float-card--3 { bottom: 15%; right: 5%; animation-duration: 5.8s; animation-delay: 0.5s; }
+.float-card--1 { top: 4%;    right: 1%;  animation-duration: 5s;   animation-delay: 0s; }
+.float-card--2 { top: 24%;   right: -4%; animation-duration: 6.5s; animation-delay: 1s; }
+.float-card--3 { top: 46%;   right: 2%;  animation-duration: 5.8s; animation-delay: 0.5s; }
+.float-card--4 { top: 67%;   right: -3%; animation-duration: 7s;   animation-delay: 1.8s; }
+.float-card--5 { bottom: 4%; right: 5%;  animation-duration: 6.2s; animation-delay: 2.5s; }
 .hero__scroll {
   position: absolute;
   bottom: 2rem;

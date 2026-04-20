@@ -10,9 +10,11 @@ const STATS = [
 ]
 
 const FLOAT_CARDS = [
-  { cls: 'float-card--1', icon: '🏭', label: 'Tập trung sản xuất',   sub: 'Đặc điểm số 1', iconBg: 'rgba(255,107,53,0.35)' },
+  { cls: 'float-card--1', icon: '🏭', label: 'Tập trung SX & TB',    sub: 'Đặc điểm số 1', iconBg: 'rgba(255,107,53,0.35)' },
   { cls: 'float-card--2', icon: '🏦', label: 'Tư bản tài chính',     sub: 'Đặc điểm số 2', iconBg: 'rgba(0,212,255,0.3)' },
   { cls: 'float-card--3', icon: '✈️', label: 'Xuất khẩu tư bản',    sub: 'Đặc điểm số 3', iconBg: 'rgba(255,215,0,0.3)' },
+  { cls: 'float-card--4', icon: '🌍', label: 'Phân chia kinh tế',    sub: 'Đặc điểm số 4', iconBg: 'rgba(255,20,147,0.3)' },
+  { cls: 'float-card--5', icon: '🗺️', label: 'Phân chia lãnh thổ',  sub: 'Đặc điểm số 5', iconBg: 'rgba(0,255,136,0.3)' },
 ]
 
 const PARTICLES = [
