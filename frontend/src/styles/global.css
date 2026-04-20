@@ -65,7 +65,7 @@
 
   /* Layout */
   --max-w: 1200px;
-  --nav-h: 72px;
+  --nav-h: 64px;
 }
 
 /* ── 2. RESET ───────────────────────────────────────── */
@@ -214,14 +214,28 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
   right: 0;
   z-index: 1000;
   height: var(--nav-h);
+  /* Gradient helps readability over the dark hero */
+  background: linear-gradient(180deg, rgba(3,13,26,0.72) 0%, transparent 100%);
   transition: background var(--t-normal), box-shadow var(--t-normal), backdrop-filter var(--t-normal);
 }
 .navbar.scrolled {
-  background: rgba(255, 254, 245, 0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 2px 20px rgba(124, 92, 191, 0.12);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
 }
+/* Links are white when over dark hero */
+.navbar:not(.scrolled) .nav-link { color: rgba(255,255,255,0.88); }
+.navbar:not(.scrolled) .nav-link:hover { color: #fff; background: rgba(255,255,255,0.1); }
+.navbar:not(.scrolled) .nav-link:hover::after { transform: scaleX(1); }
+.navbar:not(.scrolled) .nav-link::after { background: #FF6B35; }
+.navbar:not(.scrolled) .brand-title { color: rgba(255,255,255,0.95); }
+.navbar:not(.scrolled) .brand-sub { color: rgba(255,255,255,0.55); }
+.navbar:not(.scrolled) .hamburger span { background: rgba(255,255,255,0.9); }
+/* Restore dark text when scrolled */
+.navbar.scrolled .nav-link { color: var(--text-body); }
+.navbar.scrolled .brand-title { color: var(--purple-dark); }
+.navbar.scrolled .brand-sub { color: var(--text-muted); }
 .nav-inner {
   display: flex;
   align-items: center;
@@ -291,18 +305,18 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
 .nav-link:hover { color: var(--purple-dark); background: var(--purple-light); }
 .nav-link:hover::after { transform: scaleX(1); }
 .nav-cta {
-  padding: 0.5rem 1.25rem;
-  background: linear-gradient(135deg, var(--purple-dark), #9B59B6);
+  padding: 0.45rem 1.2rem;
+  background: linear-gradient(135deg, #FF6B35, #E91E8C);
   color: #fff !important;
   border-radius: var(--r-xl);
-  font-size: 0.85rem;
+  font-size: 0.83rem;
   font-weight: 700;
-  box-shadow: 0 3px 12px rgba(124, 92, 191, 0.35);
+  box-shadow: 0 3px 14px rgba(255,107,53,0.4);
   transition: all var(--t-normal) !important;
 }
 .nav-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(124, 92, 191, 0.5);
+  box-shadow: 0 6px 22px rgba(255,107,53,0.6);
   background: none;
 }
 .nav-cta::after { display: none !important; }
@@ -437,6 +451,8 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 1.25rem;
+  opacity: 0; /* SplitText sets this to 1 before splitting */
+  will-change: transform;
 }
 .hero__title .accent {
   background: linear-gradient(135deg, #FFD700 0%, #FF6B35 50%, #FF1493 100%);
@@ -571,6 +587,29 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
 .float-card--3 { top: 46%;   right: 2%;  animation-duration: 5.8s; animation-delay: 0.5s; }
 .float-card--4 { top: 67%;   right: -3%; animation-duration: 7s;   animation-delay: 1.8s; }
 .float-card--5 { bottom: 4%; right: 5%;  animation-duration: 6.2s; animation-delay: 2.5s; }
+
+/* Hero illustration card (behind orbital scene) */
+.hero__illus-card {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 290px; height: 290px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255,183,0,0.3);
+  box-shadow: 0 0 80px rgba(255,107,53,0.3), 0 0 180px rgba(0,212,255,0.12);
+  z-index: 0;
+}
+.hero__illus-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  filter: saturate(1.5) brightness(0.85) hue-rotate(5deg);
+}
+.hero__illus-grad {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, rgba(3,13,26,0.5) 100%);
+}
 .hero__scroll {
   position: absolute;
   bottom: 2rem;

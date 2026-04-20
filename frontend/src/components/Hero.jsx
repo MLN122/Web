@@ -1,6 +1,10 @@
 // frontend/src/components/Hero.jsx
 import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { SplitText } from 'gsap/SplitText'
 import { useCountUp } from '../hooks/useCountUp'
+
+gsap.registerPlugin(SplitText)
 
 const STATS = [
   { target: 5,  label: 'Đặc điểm CNTB ĐQ' },
@@ -38,21 +42,52 @@ function StatItem({ target, label }) {
 export default function Hero() {
   const bgRef = useRef(null)
 
-  // Parallax background
   useEffect(() => {
+    // ── Parallax background ──────────────────────────────
     const bg = bgRef.current
-    if (!bg) return
-    const fn = () => {
-      bg.style.transform = `translateY(${window.pageYOffset * 0.4}px)`
+    let cleanupParallax = () => {}
+    if (bg) {
+      const fn = () => { bg.style.transform = `translateY(${window.pageYOffset * 0.4}px)` }
+      window.addEventListener('scroll', fn, { passive: true })
+      cleanupParallax = () => window.removeEventListener('scroll', fn)
     }
-    window.addEventListener('scroll', fn, { passive: true })
-    return () => window.removeEventListener('scroll', fn)
+
+    // ── SplitText: hero title reveal (line mask) ─────────
+    const titleEl = document.querySelector('.hero__title')
+    if (titleEl) {
+      gsap.set(titleEl, { opacity: 1 })
+      SplitText.create(titleEl, {
+        type: 'words,lines',
+        mask: 'lines',
+        autoSplit: true,
+        onSplit(self) {
+          gsap.from(self.lines, {
+            yPercent: 108,
+            duration: 0.85,
+            stagger: 0.13,
+            ease: 'expo.out',
+            delay: 0.2,
+          })
+        },
+      })
+    }
+
+    // ── Staggered entrance animations ────────────────────
+    gsap.from('.hero__badge',      { opacity: 0, y: -18, duration: 0.55, delay: 0.05, ease: 'power2.out' })
+    gsap.from('.hero__subtitle',   { opacity: 0, y: 22,  duration: 0.7,  delay: 0.8,  ease: 'power2.out' })
+    gsap.from('.hero__cta',        { opacity: 0, y: 18,  duration: 0.6,  delay: 1.05, ease: 'power2.out' })
+    gsap.from('.hero__stats',      { opacity: 0, y: 18,  duration: 0.6,  delay: 1.25, ease: 'power2.out' })
+    gsap.from('.hero__orb',        { scale: 0.6, opacity: 0, duration: 1.2, delay: 0.3, ease: 'elastic.out(1, 0.55)' })
+    gsap.from('.hero__illus-card', { opacity: 0, scale: 0.88, duration: 0.9, delay: 0.4, ease: 'power2.out' })
+    gsap.from('.hero__float-card', { opacity: 0, x: 45, duration: 0.5, stagger: 0.1, delay: 1.0, ease: 'power2.out' })
+
+    return cleanupParallax
   }, [])
 
   const go = (e, href) => {
     e.preventDefault()
     const el = document.querySelector(href)
-    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 72, behavior: 'smooth' })
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 64, behavior: 'smooth' })
   }
 
   return (
@@ -116,8 +151,20 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right column — 3D orbital scene */}
+        {/* Right column — illustration + 3D orbital scene */}
         <div className="hero__right" aria-hidden="true">
+
+          {/* Illustrative image card — behind orbits */}
+          {/* NOTE: Ảnh minh họa từ Unsplash – nên thay bằng ảnh AI tạo về chủ đề tư bản độc quyền */}
+          <div className="hero__illus-card">
+            <img
+              src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80&fit=crop"
+              alt="Thị trường tài chính toàn cầu — ảnh minh họa"
+              className="hero__illus-img"
+            />
+            <div className="hero__illus-grad" />
+          </div>
+
           <div className="hero__3d-scene">
             {/* Orbits */}
             <div className="hero__orbit hero__orbit--1">

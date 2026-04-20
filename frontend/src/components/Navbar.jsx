@@ -12,7 +12,7 @@ const NAV_LINKS = [
 function smoothScroll(href) {
   const el = document.querySelector(href)
   if (!el) return
-  const top = el.getBoundingClientRect().top + window.scrollY - 72
+  const top = el.getBoundingClientRect().top + window.scrollY - 64
   window.scrollTo({ top, behavior: 'smooth' })
 }
 
