@@ -50,7 +50,7 @@ const NEGATIVES = [
 const COMPETITIONS = [
   {
     num: '①',
-    title: 'ĐQ vs Ngoài Độc Quyền',
+    title: 'Độc Quyền vs Ngoài Độc Quyền',
     icon: '🦁',
     side: 'left',
     badgeCls: 'tl-badge--purple',
@@ -59,7 +59,7 @@ const COMPETITIONS = [
   },
   {
     num: '②',
-    title: 'Giữa các Tổ chức ĐQ',
+    title: 'Giữa các Tổ chức Độc Quyền',
     icon: '⚔️',
     side: 'right',
     badgeCls: 'tl-badge--pink',
@@ -68,7 +68,7 @@ const COMPETITIONS = [
   },
   {
     num: '③',
-    title: 'Nội bộ Tổ chức ĐQ',
+    title: 'Nội bộ Tổ chức Độc Quyền',
     icon: '🤼',
     side: 'left',
     badgeCls: 'tl-badge--mint',
@@ -86,7 +86,7 @@ export default function DacDiem() {
           <h2 className="section__title">Tác Động của Độc Quyền trong Kinh Tế Thị Trường</h2>
           <p className="section__desc">
             Độc quyền mang lại cả tác động tích cực lẫn tiêu cực cho nền kinh tế,
-            đồng thời tạo ra ba trạng thái cạnh tranh đặc thù trong giai đoạn CNTB ĐQ.
+            đồng thời tạo ra ba trạng thái cạnh tranh đặc thù trong giai đoạn CNTB Độc Quyền.
           </p>
         </header>
 
@@ -106,21 +106,35 @@ export default function DacDiem() {
           </p>
         </div>
 
-        {/* 5 Đặc điểm của CNTB ĐQ */}
-        <div className="dac-diem-5" data-reveal data-delay="100">
-          {[
-            { icon: '🏭', num: '1', label: 'Tập trung sản xuất và tư bản',      color: '#C8853A' },
-            { icon: '🏦', num: '2', label: 'Tư bản tài chính và óc tài phiết',    color: '#7A4521' },
-            { icon: '✈️', num: '3', label: 'Xuất khẩu tư bản',                    color: '#C8853A' },
-            { icon: '🌍', num: '4', label: 'Phân chia kinh tế thế giới',         color: '#7A4521' },
-            { icon: '🗺️', num: '5', label: 'Phân chia lãnh thổ thế giới',       color: '#C8853A' },
-          ].map((d) => (
-            <div key={d.num} className="dac-diem-pill">
-              <div className="dac-diem-pill__icon" style={{ background: `${d.color}22`, color: d.color }}>{d.icon}</div>
-              <div className="dac-diem-pill__num" style={{ color: d.color }}>ĐĐ {d.num}</div>
-              <div className="dac-diem-pill__label">{d.label}</div>
+        {/* 5 Đặc điểm của CNTB Độc Quyền — orbital visualization */}
+        <div className="dac-diem-orbital" data-reveal data-delay="100">
+          <div className="dac-diem-orbital__scene">
+            <div className="hero__orbit hero__orbit--1">
+              <div className="orbit-dot orbit-dot--1" />
             </div>
-          ))}
+            <div className="hero__orbit hero__orbit--2">
+              <div className="orbit-dot orbit-dot--2" />
+            </div>
+            <div className="hero__orb">⚙️</div>
+          </div>
+          <div className="dac-diem-orbital__cards">
+            {[
+              { icon: '🏭', num: 1, label: 'Tập trung sản xuất và tư bản',          color: '#C8853A' },
+              { icon: '🏦', num: 2, label: 'Tư bản tài chính và đầu sỏ tài chính',  color: '#7A4521' },
+              { icon: '✈️', num: 3, label: 'Xuất khẩu tư bản',                       color: '#C8853A' },
+              { icon: '🌍', num: 4, label: 'Phân chia kinh tế thế giới',            color: '#7A4521' },
+              { icon: '🗺️', num: 5, label: 'Phân chia lãnh thổ thế giới',          color: '#C8853A' },
+            ].map((d) => (
+              <div key={d.num} className="dac-orb-card">
+                <div className="dac-orb-card__line" />
+                <div className="dac-orb-icon" style={{ background: `${d.color}22`, color: d.color }}>{d.icon}</div>
+                <div>
+                  <div className="dac-orb-card__sub" style={{ color: d.color }}>Đặc điểm số {d.num}</div>
+                  <div className="dac-orb-card__title">{d.label}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Positives */}

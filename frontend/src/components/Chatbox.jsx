@@ -5,7 +5,7 @@ import { knowledgeBase } from '../data/knowledgeBase'
 const SUGGESTIONS = [
   'Độc quyền là gì?',
   'Cartel khác Trust thế nào?',
-  '5 đặc điểm của CNTB ĐQ',
+  '5 đặc điểm CNTB Độc Quyền',
   'Xuất khẩu tư bản là gì?',
 ]
 

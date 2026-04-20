@@ -7,7 +7,7 @@ import { useCountUp } from '../hooks/useCountUp'
 gsap.registerPlugin(SplitText)
 
 const STATS = [
-  { target: 5,  label: 'Đặc điểm CNTB ĐQ' },
+  { target: 5,  label: 'Đặc điểm CNTB Độc Quyền' },
   { target: 4,  label: 'Hình thức tổ chức' },
   { target: 2,  label: 'Hình thức xuất khẩu' },
   
@@ -66,8 +66,7 @@ export default function Hero() {
     gsap.from('.hero__subtitle',   { opacity: 0, y: 22,  duration: 0.7,  delay: 0.8,  ease: 'power2.out' })
     gsap.from('.hero__cta',        { opacity: 0, y: 18,  duration: 0.6,  delay: 1.05, ease: 'power2.out' })
     gsap.from('.hero__stats',      { opacity: 0, y: 18,  duration: 0.6,  delay: 1.25, ease: 'power2.out' })
-    gsap.from('.hero__orb',        { scale: 0.6, opacity: 0, duration: 1.2, delay: 0.3, ease: 'elastic.out(1, 0.55)' })
-    gsap.from('.hero__illus-card', { opacity: 0, scale: 0.88, duration: 0.9, delay: 0.4, ease: 'power2.out' })
+
 
     return cleanupParallax
   }, [])
@@ -141,34 +140,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right column — illustration + 3D orbital scene */}
-        <div className="hero__right" aria-hidden="true">
 
-          {/* Illustrative image card — behind orbits */}
-          {/* NOTE: Ảnh minh họa từ Unsplash – nên thay bằng ảnh AI tạo về chủ đề tư bản độc quyền */}
-          <div className="hero__illus-card">
-            <img
-              src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80&fit=crop"
-              alt="Thị trường tài chính toàn cầu — ảnh minh họa"
-              className="hero__illus-img"
-            />
-            <div className="hero__illus-grad" />
-          </div>
-
-          <div className="hero__3d-scene">
-            {/* Orbits */}
-            <div className="hero__orbit hero__orbit--1">
-              <div className="orbit-dot orbit-dot--1" />
-            </div>
-            <div className="hero__orbit hero__orbit--2">
-              <div className="orbit-dot orbit-dot--2" />
-            </div>
-            {/* Center orb */}
-            <div className="hero__orb">⚙️</div>
-          </div>
-
-          {/* Floating info cards — moved to DacDiem section */}
-        </div>
       </div>
 
       {/* Scroll hint */}

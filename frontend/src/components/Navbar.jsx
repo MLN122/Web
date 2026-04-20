@@ -5,8 +5,8 @@ const NAV_LINKS = [
   { href: '#gioi-thieu', label: 'Giới Thiệu' },
   { href: '#hinh-thuc',  label: 'Hình Thức' },
   { href: '#dac-diem',   label: '5 Đặc Điểm' },
-  { href: '#tu-ban',     label: 'Tư Bản TC' },
-  { href: '#xuat-khau',  label: 'Xuất Khẩu TB' },
+  { href: '#tu-ban',     label: 'Tư Bản Tài Chính' },
+  { href: '#xuat-khau',  label: 'Xuất Khẩu Tư Bản' },
 ]
 
 function smoothScroll(href) {
