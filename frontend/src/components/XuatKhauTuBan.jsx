@@ -103,15 +103,16 @@ export default function XuatKhauTuBan() {
         <div className="section-illus" data-reveal>
           <div className="section-illus__wrap">
             <img
-              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=80&fit=crop"
-              alt="Mạng lưới toàn cầu — minh họạ biểu hiện mới của độc quyền thế kỷ XXI"
+              src="/p5.jpg"
+              alt="Biểu hiện mới của độc quyền — minh họa AI MLN122"
               className="section-illus__img"
               loading="lazy"
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
             />
-            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
+            <span className="section-illus__ai-badge">🤖 Ảnh do AI tạo ra · AI MLN122</span>
           </div>
           <p className="section-illus__caption">
-            Hình ảnh minh họạ: Mạng lưới độc quyền xuyên quốc gia trong kỷ nguyên số — biểu tượng của chủ nghĩa đế quốc hiện đại.
+            Hình ảnh minh họa: Biểu hiện mới của độc quyền xuyên quốc gia trong kỷ nguyên số — được tạo bởi AI MLN122.
           </p>
         </div>
 
