@@ -10,15 +10,7 @@ const STATS = [
   { target: 5,  label: 'Đặc điểm CNTB ĐQ' },
   { target: 4,  label: 'Hình thức tổ chức' },
   { target: 2,  label: 'Hình thức xuất khẩu' },
-  { target: 10, label: 'Câu hỏi kiến thức' },
-]
-
-const FLOAT_CARDS = [
-  { cls: 'float-card--1', icon: '🏭', label: 'Tập trung SX & TB',    sub: 'Đặc điểm số 1', iconBg: 'rgba(255,107,53,0.35)' },
-  { cls: 'float-card--2', icon: '🏦', label: 'Tư bản tài chính',     sub: 'Đặc điểm số 2', iconBg: 'rgba(0,212,255,0.3)' },
-  { cls: 'float-card--3', icon: '✈️', label: 'Xuất khẩu tư bản',    sub: 'Đặc điểm số 3', iconBg: 'rgba(255,215,0,0.3)' },
-  { cls: 'float-card--4', icon: '🌍', label: 'Phân chia kinh tế',    sub: 'Đặc điểm số 4', iconBg: 'rgba(255,20,147,0.3)' },
-  { cls: 'float-card--5', icon: '🗺️', label: 'Phân chia lãnh thổ',  sub: 'Đặc điểm số 5', iconBg: 'rgba(0,255,136,0.3)' },
+  
 ]
 
 const PARTICLES = [
@@ -76,7 +68,6 @@ export default function Hero() {
     gsap.from('.hero__stats',      { opacity: 0, y: 18,  duration: 0.6,  delay: 1.25, ease: 'power2.out' })
     gsap.from('.hero__orb',        { scale: 0.6, opacity: 0, duration: 1.2, delay: 0.3, ease: 'elastic.out(1, 0.55)' })
     gsap.from('.hero__illus-card', { opacity: 0, scale: 0.88, duration: 0.9, delay: 0.4, ease: 'power2.out' })
-    gsap.from('.hero__float-card', { opacity: 0, x: 45, duration: 0.5, stagger: 0.1, delay: 1.0, ease: 'power2.out' })
 
     return cleanupParallax
   }, [])
@@ -176,16 +167,7 @@ export default function Hero() {
             <div className="hero__orb">⚙️</div>
           </div>
 
-          {/* Floating info cards */}
-          {FLOAT_CARDS.map((fc) => (
-            <div key={fc.label} className={`hero__float-card ${fc.cls}`}>
-              <div className="float-icon" style={{ background: fc.iconBg }}>{fc.icon}</div>
-              <div>
-                <div style={{ fontWeight: 700, fontSize: '0.8rem' }}>{fc.label}</div>
-                <div style={{ fontSize: '0.68rem', opacity: 0.7 }}>{fc.sub}</div>
-              </div>
-            </div>
-          ))}
+          {/* Floating info cards — moved to DacDiem section */}
         </div>
       </div>
 

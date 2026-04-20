@@ -106,7 +106,24 @@ export default function DacDiem() {
           </p>
         </div>
 
-        {/* Positives */}}
+        {/* 5 Đặc điểm của CNTB ĐQ */}
+        <div className="dac-diem-5" data-reveal data-delay="100">
+          {[
+            { icon: '🏭', num: '1', label: 'Tập trung sản xuất và tư bản',      color: '#C8853A' },
+            { icon: '🏦', num: '2', label: 'Tư bản tài chính và óc tài phiết',    color: '#7A4521' },
+            { icon: '✈️', num: '3', label: 'Xuất khẩu tư bản',                    color: '#C8853A' },
+            { icon: '🌍', num: '4', label: 'Phân chia kinh tế thế giới',         color: '#7A4521' },
+            { icon: '🗺️', num: '5', label: 'Phân chia lãnh thổ thế giới',       color: '#C8853A' },
+          ].map((d) => (
+            <div key={d.num} className="dac-diem-pill">
+              <div className="dac-diem-pill__icon" style={{ background: `${d.color}22`, color: d.color }}>{d.icon}</div>
+              <div className="dac-diem-pill__num" style={{ color: d.color }}>ĐĐ {d.num}</div>
+              <div className="dac-diem-pill__label">{d.label}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Positives */}
         <h3 className="sub-heading" data-reveal style={{ color: '#06D6A0', marginBottom: '1.25rem' }}>
           ✅ Tác động Tích cực
         </h3>

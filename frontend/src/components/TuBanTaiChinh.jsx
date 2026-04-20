@@ -108,7 +108,7 @@ export default function TuBanTaiChinh() {
           </p>
         </div>
 
-        {/* Bản chất banner */}}
+        {/* Bản chất banner */}
         <div className="quote-banner" data-reveal data-delay="100">
           <div className="quote-icon">🏛️</div>
           <div className="quote-body">
