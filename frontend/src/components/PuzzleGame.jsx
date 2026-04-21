@@ -28,7 +28,7 @@ function pieceStyle(index, unlocked) {
   const bgY = `${(row / (ROWS - 1)) * 100}%`
   if (!unlocked) return {}
   return {
-    backgroundImage: "url('/ubnd.png')",
+    backgroundImage: "url('/CM-Thang-10-Nga.jpg')",
     backgroundSize: `${COLS * 100}% ${ROWS * 100}%`,
     backgroundPosition: `${bgX} ${bgY}`,
     backgroundRepeat: 'no-repeat',
@@ -287,7 +287,7 @@ export default function PuzzleGame() {
           <div className="puzzle-reveal-modal" onClick={e => e.stopPropagation()}>
             <button className="puzzle-reveal-close" onClick={() => setRevealModal(false)}>✕</button>
             <h3 className="puzzle-reveal-title">🖼️ Ảnh bí ẩn đầy đủ</h3>
-            <img src="/ubnd.png" alt="Ảnh bí ẩn đầy đủ" className="puzzle-reveal-img" />
+            <img src="/CM-Thang-10-Nga.jpg" alt="Ảnh bí ẩn đầy đủ" className="puzzle-reveal-img" />
             <p className="puzzle-reveal-caption">Đây là bức hình bạn cần ghép! Hãy đoán xem đây là ảnh gì rồi quay lại trả lời câu hỏi nhé.</p>
             <button className="btn btn--game" onClick={() => setRevealModal(false)}>Đóng lại</button>
           </div>

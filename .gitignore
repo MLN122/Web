@@ -6,3 +6,5 @@ frontend/dist/
 .env.*.local
 .vercel/
 *.log
+chroma_db/
+BE_AI/chroma_db/
