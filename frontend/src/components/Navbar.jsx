@@ -40,7 +40,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className={`navbar${scrolled ? ' scrolled' : ''}`} role="navigation">
+    <nav className={`navbar${scrolled ? ' scrolled' : ''}${menuOpen ? ' menu-open' : ''}`} role="navigation">
       <div className="nav-inner">
         {/* Brand / Logo */}
         <a href="#hero" className="nav-brand" onClick={(e) => go(e, '#hero')}>
@@ -79,6 +79,15 @@ export default function Navbar() {
             </a>
           </li>
         </ul>
+
+        {/* Mobile dim overlay */}
+        {menuOpen && (
+          <div
+            className="nav-overlay"
+            onClick={() => setMenuOpen(false)}
+            aria-hidden="true"
+          />
+        )}
 
         {/* Hamburger */}
         <button

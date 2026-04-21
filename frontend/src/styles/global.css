@@ -343,6 +343,28 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* Dim overlay behind mobile menu */
+.nav-overlay {
+  display: none;
+}
+@media (max-width: 768px) {
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    background: rgba(0,0,0,0.45);
+    animation: fadeIn 0.2s ease;
+  }
+  /* Hamburger stays on top of overlay */
+  .hamburger {
+    position: relative;
+    z-index: 1001;
+  }
+  /* nav-links above overlay */
+  /* (z-index: 999 already set in 768px block) */
+}
+
 /* ── 8. HERO ────────────────────────────────────────── */
 .hero {
   position: relative;
@@ -2578,30 +2600,45 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
   .hamburger { display: flex; }
   .nav-links {
     position: fixed;
-    inset: var(--nav-h) 0 0 0;
-    background: rgba(255,254,245,0.97);
-    backdrop-filter: blur(20px);
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    z-index: 999;
+    background: #fffef5;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    padding: 1.5rem;
-    gap: 0.25rem;
+    align-items: stretch;
+    padding: 1rem 1.25rem 2rem;
+    gap: 0.15rem;
     transform: translateX(100%);
     transition: transform var(--t-normal);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.08);
   }
-  .nav-links.is-open { transform: none; overflow-y: auto; }
+  .nav-links.is-open { transform: none; }
   .nav-link {
+    display: block;
     width: 100%;
-    padding: 0.85rem 1rem;
-    font-size: 0.97rem;
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
     border-radius: var(--r-sm);
     white-space: normal;
     overflow: visible;
     line-height: 1.4;
   }
-  .nav-cta { width: 100%; justify-content: center; margin-top: 0.5rem; text-align: center; }
+  .nav-cta {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    margin-top: 0.4rem;
+    text-align: center;
+    border-radius: var(--r-sm);
+    font-size: 0.95rem;
+  }
   .intro-grid { grid-template-columns: 1fr; }
   .img-showcase { grid-template-columns: 1fr; }
   .org-grid { grid-template-columns: 1fr 1fr; }
