@@ -1,6 +1,5 @@
 // frontend/src/components/Chatbox.jsx
 import { useState, useRef, useEffect } from 'react'
-import { knowledgeBase } from '../data/knowledgeBase'
 
 const SUGGESTIONS = [
   'Độc quyền là gì?',
@@ -9,14 +8,17 @@ const SUGGESTIONS = [
   'Xuất khẩu tư bản là gì?',
 ]
 
-function findAnswer(text) {
-  const lower = text.toLowerCase()
-  for (const kb of knowledgeBase) {
-    if (kb.keys.some((k) => lower.includes(k))) {
-      return kb.response
-    }
-  }
-  return `🤔 Mình chưa có câu trả lời cho "<em>${text}</em>".<br/>Thử hỏi về: <strong>Cartel, Trust, Concern, Syndicat, Tư bản tài chính, Xuất khẩu tư bản</strong> hoặc <strong>5 đặc điểm CNTB độc quyền</strong>.`
+function escapeHtml(str) {
+  return str
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;')
+}
+
+function toSafeHtml(text) {
+  return escapeHtml(text).replace(/\n/g, '<br/>')
 }
 
 function now() {
@@ -25,6 +27,7 @@ function now() {
 
 export default function Chatbox() {
   const [open, setOpen] = useState(false)
+  const [sessionId, setSessionId] = useState(() => localStorage.getItem('mln122_chat_session') || '')
   const [msgs, setMsgs] = useState([
     {
       id: 0,
@@ -43,25 +46,57 @@ export default function Chatbox() {
     msgEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [msgs, typing])
 
-  const send = (text) => {
+  useEffect(() => {
+    if (sessionId) localStorage.setItem('mln122_chat_session', sessionId)
+  }, [sessionId])
+
+  const send = async (text) => {
     const q = (text || input).trim()
-    if (!q) return
+    if (!q || typing) return
     setInput('')
     setBadge(0)
 
     setMsgs((prev) => [
       ...prev,
-      { id: Date.now(), role: 'user', html: q, time: now() },
+      { id: Date.now(), role: 'user', html: toSafeHtml(q), time: now() },
     ])
 
     setTyping(true)
-    setTimeout(() => {
-      setTyping(false)
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: q, sessionId }),
+      })
+
+      if (!res.ok) throw new Error('Chat API failed')
+
+      const data = await res.json()
+      if (data.sessionId) setSessionId(data.sessionId)
+
       setMsgs((prev) => [
         ...prev,
-        { id: Date.now() + 1, role: 'bot', html: findAnswer(q), time: now() },
+        {
+          id: Date.now() + 1,
+          role: 'bot',
+          html: toSafeHtml(data.reply || 'Mình chưa nhận được phản hồi từ AI.'),
+          time: now(),
+        },
       ])
-    }, 900)
+    } catch {
+      setMsgs((prev) => [
+        ...prev,
+        {
+          id: Date.now() + 1,
+          role: 'bot',
+          html: '⚠️ Chưa kết nối được AI backend. Bạn kiểm tra lại BE_AI đang chạy và thử lại nhé.',
+          time: now(),
+        },
+      ])
+    } finally {
+      setTyping(false)
+    }
   }
 
   const handleOpen = () => {

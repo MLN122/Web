@@ -12,7 +12,8 @@ const MEMBERS = [
   'Vũ Ngọc Phương Linh - SE182577',
   'Nguyễn Văn Mạnh - SE184068',
   'Phạm Thị DThái Nhật Minh Quân - SS180085',
-  'Hoàng Văn E',
+  'Lê Đại Phúc - SE182078',
+  'Nguyễn Hiểu Linh - SE193246'
 ]
 
 function go(e, href) {

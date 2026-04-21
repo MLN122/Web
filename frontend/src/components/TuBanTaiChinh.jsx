@@ -101,7 +101,7 @@ export default function TuBanTaiChinh() {
               className="section-illus__img section-illus__img--contain"
               loading="lazy"
             />
-            <span className="section-illus__ai-badge"></span>
+            <span className="section-illus__ai-badge">Ngân hàng trung ương Anh</span>
           </div>
           <p className="section-illus__caption">
             Hình ảnh minh họa: Ngân hàng trung ương và các tập đoàn độc quyền nhà nước — nền tảng của sự điều tiết kinh tế tư sản.
