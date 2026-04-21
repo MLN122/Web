@@ -17,8 +17,25 @@ function escapeHtml(str) {
     .replaceAll("'", '&#39;')
 }
 
+/** Convert markdown-like Claude output to safe HTML */
 function toSafeHtml(text) {
-  return escapeHtml(text).replace(/\n/g, '<br/>')
+  let s = escapeHtml(text)
+  // Bold: **text** → <strong>text</strong>
+  s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+  // Italic: *text* or _text_
+  s = s.replace(/\*(.+?)\*/g, '<em>$1</em>')
+  s = s.replace(/_(.+?)_/g, '<em>$1</em>')
+  // Numbered list: lines starting with 1. 2. etc.
+  s = s.replace(/^(\d+)\.\s+(.+)$/gm, '<li>$1. $2</li>')
+  // Bullet list: lines starting with - or •
+  s = s.replace(/^[-•]\s+(.+)$/gm, '<li>$1</li>')
+  // Wrap consecutive <li> in <ul>
+  s = s.replace(/(<li>.*<\/li>\n?)+/g, (m) => `<ul>${m}</ul>`)
+  // Newlines → <br/>
+  s = s.replace(/\n/g, '<br/>')
+  // Clean up <br/> inside <ul>/<li>
+  s = s.replace(/<br\/>(<\/?[ul|li])/g, '$1')
+  return s
 }
 
 function now() {
@@ -28,6 +45,7 @@ function now() {
 export default function Chatbox() {
   const [open, setOpen] = useState(false)
   const [sessionId, setSessionId] = useState(() => localStorage.getItem('mln122_chat_session') || '')
+  const [aiOnline, setAiOnline] = useState(null) // null=checking, true=online, false=offline
   const [msgs, setMsgs] = useState([
     {
       id: 0,
@@ -49,6 +67,20 @@ export default function Chatbox() {
   useEffect(() => {
     if (sessionId) localStorage.setItem('mln122_chat_session', sessionId)
   }, [sessionId])
+
+  // Wake up HF Space when chatbox first opens
+  useEffect(() => {
+    if (!open || aiOnline !== null) return
+    setAiOnline(null)
+    fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: '__ping__', sessionId: '' }),
+    })
+      .then((r) => r.json())
+      .then((d) => setAiOnline(d.source === 'ai'))
+      .catch(() => setAiOnline(false))
+  }, [open])
 
   const send = async (text) => {
     const q = (text || input).trim()
@@ -74,6 +106,8 @@ export default function Chatbox() {
 
       const data = await res.json()
       if (data.sessionId) setSessionId(data.sessionId)
+      if (data.source === 'ai') setAiOnline(true)
+      else if (data.source === 'fallback') setAiOnline(false)
 
       setMsgs((prev) => [
         ...prev,
@@ -124,7 +158,9 @@ export default function Chatbox() {
           <div className="chat-avatar">🤖</div>
           <div className="chat-header-info">
             <div className="chat-header-name">AI MLN122</div>
-            <div className="chat-header-status">● Trực tuyến · Sẵn sàng</div>
+            <div className={`chat-header-status${aiOnline === false ? ' status--fallback' : ''}`}>
+              {aiOnline === null ? '○ Đang kết nối...' : aiOnline ? '● AI Claude · Trực tuyến' : '● Chế độ cơ bản'}
+            </div>
           </div>
           <button className="chat-close" onClick={() => setOpen(false)} aria-label="Đóng">✕</button>
         </div>

@@ -1,5 +1,7 @@
 // api/chat.js — Vercel Serverless Function (Node.js)
-// POST /api/chat  { message: string }  →  { reply: string }
+// POST /api/chat  { message: string, sessionId?: string }  →  { reply: string, sessionId: string }
+
+const BE_AI_BASE_URL = process.env.BE_AI_BASE_URL || process.env.BACKEND_AI_URL || 'http://127.0.0.1:8000'
 
 const knowledgeBase = [
   {
@@ -103,14 +105,60 @@ export default function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const { message } = req.body ?? {}
+  const { message, sessionId } = req.body ?? {}
   if (!message || typeof message !== 'string') {
     return res.status(400).json({ error: 'message is required' })
   }
 
   // Sanitize: limit length to prevent abuse
   const sanitized = message.slice(0, 300)
-  const reply = findResponse(sanitized)
 
-  return res.status(200).json({ reply })
+  const callAI = async (msg, sid) => {
+    const createSession = async () => {
+      const sessionRes = await fetch(`${BE_AI_BASE_URL}/sessions`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+      })
+      if (!sessionRes.ok) throw new Error('Cannot create AI session')
+      const sessionData = await sessionRes.json()
+      return sessionData.session_id
+    }
+
+    let currentSid = sid
+    if (!currentSid) currentSid = await createSession()
+
+    let chatRes = await fetch(`${BE_AI_BASE_URL}/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: msg, session_id: currentSid }),
+    })
+
+    if (chatRes.status === 404) {
+      currentSid = await createSession()
+      chatRes = await fetch(`${BE_AI_BASE_URL}/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg, session_id: currentSid }),
+      })
+    }
+
+    if (!chatRes.ok) throw new Error(`AI chat failed: ${chatRes.status}`)
+
+    const data = await chatRes.json()
+    return { reply: data.reply, sessionId: currentSid }
+  }
+
+  // Ping: wake up HF Space and report connectivity
+  if (sanitized === '__ping__') {
+    return callAI('Xin chào', sessionId || '')
+      .then((_) => res.status(200).json({ reply: 'pong', source: 'ai', sessionId: sessionId || '' }))
+      .catch(() => res.status(200).json({ reply: 'pong', source: 'fallback', sessionId: '' }))
+  }
+
+  callAI(sanitized, sessionId || '')
+    .then((out) => res.status(200).json({ ...out, source: 'ai' }))
+    .catch(() => {
+      const reply = findResponse(sanitized)
+      res.status(200).json({ reply, source: 'fallback', sessionId: sessionId || '' })
+    })
 }

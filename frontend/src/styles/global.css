@@ -1852,6 +1852,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-body); }
   margin-top: 0.1rem;
 }
 .chat-header-status.is-typing { opacity: 1; animation: blink 1.2s ease-in-out infinite; }
+.chat-header-status.status--fallback { color: #ffd080; opacity: 1; }
 .chat-close {
   color: rgba(255,255,255,0.75);
   font-size: 1rem;
