@@ -50,7 +50,7 @@ export default function PuzzleGame() {
 
   useEffect(() => {
     if (gameState === 'playing' && allUnlocked) {
-      const t = setTimeout(() => setGameState('finished'), 800)
+      const t = setTimeout(() => { setGameState('finished'); setRevealModal(true) }, 800)
       return () => clearTimeout(t)
     }
   }, [pieces, gameState, allUnlocked])
@@ -125,7 +125,6 @@ export default function PuzzleGame() {
                 <div className="puzzle-rule"><span>🖱️</span> Click mảnh để chọn câu hỏi</div>
                 <div className="puzzle-rule"><span>✅</span> Đúng — mảnh mở khóa ngay</div>
                 <div className="puzzle-rule"><span>🔁</span> Sai — vẫn thử lại được</div>
-                <div className="puzzle-rule"><span>🖼️</span> Nút xem ảnh để đoán trước</div>
               </div>
               <div className="puzzle-preview-grid puzzle-preview-grid--teaser">
                 {Array.from({ length: TOTAL }, (_, i) => (
@@ -136,7 +135,6 @@ export default function PuzzleGame() {
               </div>
               <div className="puzzle-start-btns">
                 <button className="btn btn--game" onClick={startGame}>🧩 Bắt đầu ghép mảnh!</button>
-                <button className="btn btn--reveal-outline" onClick={() => setRevealModal(true)}>🖼️ Xem ảnh đầy đủ</button>
               </div>
             </div>
           )}
@@ -162,8 +160,7 @@ export default function PuzzleGame() {
                   </div>
                 </div>
                 <div className="puzzle-hud-actions">
-                  <button className="btn btn--reveal-outline btn--sm" onClick={() => setRevealModal(true)}>🖼️ Xem ảnh</button>
-                  <button className="btn btn--finish-outline btn--sm" onClick={() => setGameState('finished')}>🏁 Kết thúc</button>
+                  <button className="btn btn--finish-outline btn--sm" onClick={() => { setGameState('finished'); setRevealModal(true) }}>🏁 Kết thúc</button>
                 </div>
               </div>
 
@@ -275,7 +272,6 @@ export default function PuzzleGame() {
               </div>
               <div className="puzzle-result-btns">
                 <button className="btn btn--game" onClick={startGame}>🔄 Chơi lại</button>
-                <button className="btn btn--reveal-outline" onClick={() => setRevealModal(true)}>🖼️ Xem ảnh đầy đủ</button>
               </div>
             </div>
           )}
