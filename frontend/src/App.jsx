@@ -7,6 +7,7 @@ import DacDiem from './components/DacDiem'
 import TuBanTaiChinh from './components/TuBanTaiChinh'
 import XuatKhauTuBan from './components/XuatKhauTuBan'
 import MemoryGame from './components/MemoryGame'
+import PuzzleGame from './components/PuzzleGame'
 import Chatbox from './components/Chatbox'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -47,6 +48,7 @@ export default function App() {
         <TuBanTaiChinh />
         <XuatKhauTuBan />
         <MemoryGame />
+        <PuzzleGame />
       </main>
       <Footer />
       <Chatbox />

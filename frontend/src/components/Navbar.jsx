@@ -2,11 +2,11 @@
 import { useState, useEffect } from 'react'
 
 const NAV_LINKS = [
-  { href: '#gioi-thieu', label: 'Giới Thiệu' },
+  { href: '#gioi-thieu', label: 'Khái Niệm' },
   { href: '#hinh-thuc',  label: 'Hình Thức' },
-  { href: '#dac-diem',   label: '5 Đặc Điểm' },
-  { href: '#tu-ban',     label: 'Tư Bản Tài Chính' },
-  { href: '#xuat-khau',  label: 'Xuất Khẩu Tư Bản' },
+  { href: '#dac-diem',   label: 'Tác Động' },
+  { href: '#tu-ban',     label: 'Độc Quyền Nhà Nước' },
+  { href: '#xuat-khau',  label: 'Biểu Hiện Mới' },
 ]
 
 function smoothScroll(href) {
@@ -47,7 +47,7 @@ export default function Navbar() {
           <img src="/fpt.png" alt="FPT University" className="nav-logo" />
           <div className="nav-brand-text">
             <span className="brand-title">MLN122 — Nhóm 1</span>
-            <span className="brand-sub">KTCT Mác-Lênin · Chương Độc Quyền</span>
+            <span className="brand-sub">KTCT Mác-Lênin · Độc Quyền</span>
           </div>
         </a>
 
@@ -66,7 +66,16 @@ export default function Navbar() {
               className="nav-link nav-cta"
               onClick={(e) => go(e, '#minigame')}
             >
-              🎮 Mini Game
+              🎮 Lật Thẻ
+            </a>
+          </li>
+          <li>
+            <a
+              href="#puzzle-game"
+              className="nav-link nav-cta nav-cta--puzzle"
+              onClick={(e) => go(e, '#puzzle-game')}
+            >
+              🧩 Ghép Mảnh
             </a>
           </li>
         </ul>

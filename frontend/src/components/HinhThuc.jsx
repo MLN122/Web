@@ -153,18 +153,18 @@ export default function HinhThuc() {
         </header>
 
         {/* Minh họạ ảnh AI */}
-        <div className="section-illus" data-reveal>
-          <div className="section-illus__wrap">
+        <div className="section-illus" data-reveal style={{ marginTop: '2.5rem' }}>
+          <div className="section-illus__wrap section-illus__wrap--fit">
             <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&q=80&fit=crop"
-              alt="Hội nghị thương mại — minh họạ các hình thức tổ chức độc quyền"
-              className="section-illus__img"
+              src="/p2.1.png"
+              alt="Hội đồng quản trị tập đoàn — minh họa cơ cấu tổ chức độc quyền"
+              className="section-illus__img section-illus__img--contain"
               loading="lazy"
             />
-            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
+            <span className="section-illus__ai-badge">🤖 Minh họa · AI </span>
           </div>
           <p className="section-illus__caption">
-            Hình ảnh minh họạ: Phòng họi nghị của một tín-tơ-tư (Trust) — hình thức liên kết tư bản trọn vẹn nhất trong thế kỷ XX.
+            Hình ảnh minh họa: Phòng họi nghị của một Trust — hình thức liên kết tư bản trọn vẹn nhất trong thế kỷ XX.
           </p>
         </div>
 
@@ -255,17 +255,17 @@ export default function HinhThuc() {
 
         {/* Second illustration */}
         <div className="section-illus" data-reveal style={{ marginTop: '2.5rem' }}>
-          <div className="section-illus__wrap">
+          <div className="section-illus__wrap section-illus__wrap--fit">
             <img
-              src="https://images.unsplash.com/photo-1560472355-536de3962603?w=1400&q=80&fit=crop"
+              src="/p2.png"
               alt="Hội đồng quản trị tập đoàn — minh họa cơ cấu tổ chức độc quyền"
-              className="section-illus__img"
+              className="section-illus__img section-illus__img--contain"
               loading="lazy"
             />
-            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
+            <span className="section-illus__ai-badge">🤖 Minh họa · AI </span>
           </div>
           <p className="section-illus__caption">
-            Hình ảnh minh họa: Phòng họp hội đồng quản trị — từ Cartel đến Concern, các hình thức tổ chức độc quyền ngày càng chặt chẽ và quy mô.
+            Hình ảnh minh họa: Các hình thức tổ chức độc quyền và tư bản tài chính.
           </p>
         </div>
       </div>

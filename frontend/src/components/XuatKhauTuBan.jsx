@@ -111,7 +111,7 @@ export default function XuatKhauTuBan() {
             <span className="section-illus__ai-badge">🤖 Ảnh do AI tạo ra</span>
           </div>
           <p className="section-illus__caption">
-            Hình ảnh minh họa: Những biểu hiện mới của độc quyền xuyên quốc gia trong kỷ nguyên số — do AI tạo ra.
+            Hình ảnh minh họa: Những biểu hiện mới của độc quyền xuyên quốc gia trong kỷ nguyên số — do AI tạo ra
           </p>
         </div>
 
@@ -153,7 +153,7 @@ export default function XuatKhauTuBan() {
               className="section-illus__img"
               loading="lazy"
             />
-            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
+            <span className="section-illus__ai-badge"></span>
           </div>
           <p className="section-illus__caption">
             Hình ảnh minh họa: Cảng container quốc tế — biểu tượng dòng chảy tư bản xuyên quốc gia và phân công lao động thế giới.

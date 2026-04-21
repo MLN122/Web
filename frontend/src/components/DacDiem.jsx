@@ -179,14 +179,14 @@ export default function DacDiem() {
 
         {/* Mid-section illustration */}
         <div className="section-illus" data-reveal style={{ marginBottom: '2.5rem' }}>
-          <div className="section-illus__wrap">
+          <div className="section-illus__wrap section-illus__wrap--fit">
             <img
-              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1400&q=80&fit=crop"
+              src="/p3.png"
               alt="Biểu đồ thị trường — minh họa tác động kinh tế của độc quyền"
-              className="section-illus__img"
+              className="section-illus__img section-illus__img--contain"
               loading="lazy"
             />
-            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
+            <span className="section-illus__ai-badge">🤖 Minh họa · AI </span>
           </div>
           <p className="section-illus__caption">
             Hình ảnh minh họa: Phân hóa thị trường — tác động tích cực và tiêu cực của độc quyền đến nền kinh tế thế giới.

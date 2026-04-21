@@ -28,7 +28,7 @@ const CAUSES = [
 
 const IMAGES = [
   {
-    src: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80&fit=crop',
+    src: '/OPEC.png',
     alt: 'Thị trường tài chính OPEC',
     caption: 'OPEC — liên minh độc quyền dầu mỏ kiểm soát ~40% sản lượng thế giới',
   },
@@ -56,12 +56,12 @@ export default function GioiThieu() {
         <div className="section-illus" data-reveal>
           <div className="section-illus__wrap">
             <img
-              src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1400&q=80&fit=crop"
+              src="/san-chung-khoan-1.jpg"
               alt="Sàn giao dịch chứng khoán New York — minh họa sự hình thành độc quyền tài chính"
               className="section-illus__img"
               loading="lazy"
             />
-            <span className="section-illus__ai-badge">🤖 Ảnh do AI tạo ra</span>
+            <span className="section-illus__ai-badge"></span>
           </div>
           <p className="section-illus__caption">
             Hình ảnh minh họa: Sàn giao dịch chứng khoán — nơi tập trung tư bản và khởi nguồn của các tổ chức độc quyền tài chính thế giới.

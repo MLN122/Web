@@ -1,18 +1,17 @@
 // frontend/src/components/Footer.jsx
 const FOOTER_LINKS = [
-  { href: '#gioi-thieu', label: 'Giới Thiệu' },
-  { href: '#hinh-thuc',  label: 'Hình Thức ĐQ' },
-  { href: '#dac-diem',   label: '5 Đặc Điểm' },
-  { href: '#tu-ban',     label: 'Tư Bản TC' },
-  { href: '#xuat-khau',  label: 'Xuất Khẩu TB' },
-  { href: '#minigame',   label: '🎮 Mini Game' },
+   { href: '#gioi-thieu', label: 'Khái Niệm' },
+  { href: '#hinh-thuc',  label: 'Hình Thức' },
+  { href: '#dac-diem',   label: 'Tác Động' },
+  { href: '#tu-ban',     label: 'Độc Quyền Nhà Nước' },
+  { href: '#xuat-khau',  label: 'Biểu Hiện Mới' },
 ]
 
 const MEMBERS = [
-  'Nguyễn Văn A',
-  'Trần Thị B',
-  'Lê Văn C',
-  'Phạm Thị D',
+  'Nguyễn Thanh Tài - SE183560',
+  'Vũ Ngọc Phương Linh - SE182577',
+  'Nguyễn Văn Mạnh - SE184068',
+  'Phạm Thị DThái Nhật Minh Quân - SS180085',
   'Hoàng Văn E',
 ]
 
@@ -23,26 +22,32 @@ function go(e, href) {
 }
 
 export default function Footer() {
+  const year = new Date().getFullYear()
+
   return (
     <footer className="site-footer">
-      <div className="footer-inner">
-        <div className="footer-top">
-          {/* Brand column */}
-          <div className="footer-brand">
-            <img src="/fpt.png" alt="FPT University" className="footer-logo" />
-            <div className="footer-brand-text">
-              <strong>MLN122 — Nhóm 1</strong>
-              <span>Kinh Tế Chính Trị Mác-Lênin</span>
+      <div className="footer-inner footer-shell">
+        <div className="footer-grid">
+          <section className="footer-card footer-card--brand">
+            <div className="footer-brand">
+              <img src="/fpt.png" alt="FPT University" className="footer-logo" />
+              <div className="footer-brand-text">
+                <strong>MLN122 - Nhóm 1</strong>
+                <span>Kinh tế Chính trị Mác - Lênin</span>
+              </div>
             </div>
             <p className="footer-desc">
-              Đề tài: Độc Quyền trong Chủ Nghĩa Tư Bản — Phần 5 KTCT Mác-Lênin.
-              Website được xây dựng phục vụ học tập và nghiên cứu.
+              Chuyên đề: Độc quyền trong chủ nghĩa tư bản. Website trình bày kiến thức học phần theo hướng trực quan, tương tác và dễ ôn tập.
             </p>
-          </div>
+            <div className="footer-tag-row">
+              <span className="footer-tag">FPT University</span>
+              <span className="footer-tag">Spring 2026</span>
+              <span className="footer-tag">MLN122</span>
+            </div>
+          </section>
 
-          {/* Nav links */}
-          <div className="footer-col">
-            <h4 className="footer-col-title">Nội dung</h4>
+          <section className="footer-card">
+            <h4 className="footer-col-title">Mục nội dung</h4>
             <ul className="footer-nav">
               {FOOTER_LINKS.map(({ href, label }) => (
                 <li key={href}>
@@ -50,28 +55,27 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </section>
 
-          {/* Members */}
-          <div className="footer-col">
+          <section className="footer-card">
             <h4 className="footer-col-title">Thành viên nhóm</h4>
             <ul className="footer-members">
               {MEMBERS.map((m) => (
-                <li key={m}>👤 {m}</li>
+                <li key={m}>{m}</li>
               ))}
             </ul>
-          </div>
+          </section>
         </div>
 
         <div className="footer-bottom">
           <p>
-            © 2025 MLN122 Nhóm 1 · Trường Đại học FPT · Môn Kinh Tế Chính Trị Mác-Lênin
+            © {year} MLN122 Nhóm 1 · Trường Đại học FPT
           </p>
           <div className="footer-credits">
-            <span>Nguồn tham khảo:</span>
-            <a href="https://www.marxists.org/archive/lenin/works/1916/imp-hsc/" target="_blank" rel="noopener noreferrer">Lenin · CNTB ĐQ</a>
-            <span>·</span>
-            <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash Images</a>
+            <span>Tài liệu:</span>
+            <a href="https://www.marxists.org/archive/lenin/works/1916/imp-hsc/" target="_blank" rel="noopener noreferrer">Lenin - CNTB độc quyền</a>
+            <span>|</span>
+            <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>
           </div>
         </div>
       </div>

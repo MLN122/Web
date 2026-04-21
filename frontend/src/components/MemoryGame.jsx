@@ -162,7 +162,7 @@ export default function MemoryGame() {
 
               {/* Card grid */}
               <div className="memory-grid">
-                {cards.map((card) => {
+                {cards.map((card, index) => {
                   const isFlipped  = flipped.includes(card.uid)
                   const isMatched  = matched.has(card.pairId)
                   const faceUp     = isFlipped || isMatched
@@ -181,12 +181,14 @@ export default function MemoryGame() {
                       <div className="mem-card-inner">
                         {/* Face DOWN */}
                         <div className="mem-face mem-face--front">
+                          <span className="mem-card-index">{index + 1}</span>
                           <div className="card-back-icon">?</div>
                           <div className="card-back-logo">🎓</div>
                         </div>
 
                         {/* Face UP */}
                         <div className="mem-face mem-face--back">
+                          <span className="mem-card-index mem-card-index--back">{index + 1}</span>
                           <div className="card-icon">{card.icon}</div>
                           <div className="card-content">
                             <div className={`card-type ${card.type === 'term' ? 'type-term' : 'type-desc'}`}>

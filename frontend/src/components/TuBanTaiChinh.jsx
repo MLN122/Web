@@ -92,19 +92,19 @@ export default function TuBanTaiChinh() {
           </p>
         </header>
 
-        {/* Minh họạ ảnh AI */}
-        <div className="section-illus" data-reveal>
-          <div className="section-illus__wrap">
+        {/* Minh họạ ảnh  */}
+        <div className="section-illus" data-reveal style={{ marginTop: '2.5rem' }}>
+          <div className="section-illus__wrap section-illus__wrap--fit">
             <img
-              src="https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=1400&q=80&fit=crop"
+              src="/bank.jpg"
               alt="Trụ sở ngân hàng nhà nước — minh họạ độc quyền nhà nước trong chủ nghĩa tư bản"
-              className="section-illus__img"
+              className="section-illus__img section-illus__img--contain"
               loading="lazy"
             />
-            <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
+            <span className="section-illus__ai-badge"></span>
           </div>
           <p className="section-illus__caption">
-            Hình ảnh minh họạ: Ngân hàng trung ương và các tập đoàn độc quyền nhà nước — nền tảng của sự điều tiết kinh tế tư sản.
+            Hình ảnh minh họa: Ngân hàng trung ương và các tập đoàn độc quyền nhà nước — nền tảng của sự điều tiết kinh tế tư sản.
           </p>
         </div>
 
@@ -215,12 +215,12 @@ export default function TuBanTaiChinh() {
         </div>
 
         {/* Mid-section illustration */}
-        <div className="section-illus" data-reveal style={{ marginBottom: '2.5rem' }}>
-          <div className="section-illus__wrap">
+        <div className="section-illus" data-reveal style={{ marginTop: '2.5rem' }}>
+          <div className="section-illus__wrap section-illus__wrap--fit">
             <img
-              src="https://images.unsplash.com/photo-1569025743873-ea3a9ade89f9?w=1400&q=80&fit=crop"
+              src='/p4.2.png'
               alt="Tòa nhà chính phủ — minh họa độc quyền nhà nước trong chủ nghĩa tư bản"
-              className="section-illus__img"
+              className="section-illus__img section-illus__img--contain"
               loading="lazy"
             />
             <span className="section-illus__ai-badge">🤖 Minh họạ · AI MLN122</span>
