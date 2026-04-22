@@ -24,7 +24,7 @@ const FORMS = [
   {
     num: '02',
     icon: '🔗',
-    vn: 'Syndicat',
+    vn: 'Syndicate',
     phonetic: 'Xinh-đi-ca',
     hint: 'Độc quyền lưu thông · Pháp',
     desc: 'Độc quyền về lưu thông (mua - bán). Các xí nghiệp vẫn độc lập về sản xuất nhưng mọi việc mua nguyên liệu và bán hàng đều thực hiện qua văn phòng chung. Từng phát triển nhất ở Pháp.',
