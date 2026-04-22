@@ -20,7 +20,7 @@ const BANNERS = [
     label: 'Minh họa: Tư bản tài chính',
     accent: '#00B4D8',
     quote: '"Tư bản tài chính là tư bản ngân hàng của một vài ngân hàng độc quyền lớn nhất, hợp nhất với tư bản của các liên minh độc quyền công nghiệp."',
-    author: '— Rudolf Hilferding',
+    author: '— V.I. Lênin',
   },
   {
     id: 'banner-3',
